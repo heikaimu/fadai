@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-04-29 09:44:44
+ * @LastEditTime: 2022-07-18 11:29:18
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +22,12 @@
   <meta name="keywords" content="这是一些关键字" />
   <meta name="author" content="LYW" />
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="./style/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="./style/lib/swiper.min.css" />
-  <link rel="stylesheet" href="./style/lib/animation.css" />
+  <link rel="stylesheet" href="./style/bootstrap.css" />
+  <link rel="stylesheet" href="./style/swiper.min.css" />
+  <link rel="stylesheet" href="./style/animation.css" />
   <link rel="stylesheet" href="./fonts/iconfont.css" />
   <link rel="stylesheet" href="./style/app.css" />
-  <!--[if lt IE 9]>
-      <script src="./js/lib/html5shiv.js"></script>
-      <script src="./js/lib/respond.src.js"></script>
-    <![endif]-->
+  <script src="./js/browser.js"></script>
 </head>
 
 <body id="app">
@@ -41,90 +38,58 @@
   </div>
 
   <!-- header -->
-  <header class="web-header py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="header--left">
-        <p class="font-weight-bold">先咨询，再立案！专业的律师团队助您解决法律纠纷！</p>
-      </div>
-      <div class="header--right">
-        <div class="d-flex">
-          <button type="button" class="btn btn-primary ml-4">免费咨询：13352071690</button>
-          <button type="button" class="btn btn-primary ml-4">微信咨询</button>
-          <button type="button" class="btn btn-primary ml-4">立即咨询</button>
+  <header class="web-header">
+    <!-- 上 -->
+    <div class="header-top">
+      <div class="container ">
+        <div class="header-top__content">
+          <div class="header-top__left">
+            <p class="font-weight-bold">先咨询，再立案！专业的律师团队助您解决法律纠纷！</p>
+          </div>
+          <div class="header-top__right">
+            <div class="header-top__button-wrapper">
+              <a href="" class="header-top__button">
+                <span class="header-top__button-icon header-top__button-icon--one"></span>
+                免费咨询：13352071690
+              </a>
+              <a href="" class="header-top__button">
+                <span class="header-top__button-icon header-top__button-icon--two"></span>
+                微信咨询
+              </a>
+              <a href="" class="header-top__button">
+                <span class="header-top__button-icon header-top__button-icon--three"></span>
+                立即咨询
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </header>
-
-  <!-- nav -->
-  <div class="web-nav">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="logo">
-        <a href="">
-          <img src="./images/logo.png" alt="" srcset="">
-        </a>
-        <a href="">
-          <img src="./images/logo.png" alt="" srcset="">
+    <!-- 下 -->
+    <div class="header-bottom">
+      <div class="header-bottom__left">
+        <a href="" class="web-logo">
+          <img src="./images/logo.png" alt="">
         </a>
       </div>
-
-      <!-- 导航主体 -->
-      <div class="nav-wrapper">
-        <ul class="nav-one container" id="mainNav">
-          <li class="nav-one-item">
-            <a href="./" class="nav-one-text">首页</a>
-          </li>
-          <li class="nav-one-item">
-            <a href="./single_page.html" class="nav-one-text arrow">学院概括</a>
-            <span class="nav-two-open nav-open-icon iconfont icon-plus"></span>
-            <ul class="nav-two">
-              <li class="nav-two-item">
-                <a href="./article_list.html" class="nav-two-text arrow">学院介绍</a>
-                <span class="nav-three-open nav-open-icon iconfont icon-plus"></span>
-                <nav class="nav-three">
-                  <a href="/" class="nav-three-text">三级菜单</a>
-                  <a href="/" class="nav-three-text">三级菜单</a>
-                  <a href="/" class="nav-three-text">三级菜单</a>
-                  <a href="/" class="nav-three-text">三级菜单</a>
-                </nav>
-              </li>
-              <li class="nav-two-item">
-                <a href="./teacher_list.html" class="nav-two-text">院系领导</a>
-              </li>
-              <li class="nav-two-item">
-                <a href="./teacher_list.html" class="nav-two-text">教授委员会</a>
-              </li>
-              <li class="nav-two-item">
-                <a href="./article_list.html" class="nav-two-text">系所设置</a>
-              </li>
-              <li class="nav-two-item">
-                <a href="./article_list.html" class="nav-two-text">科研机构</a>
-              </li>
-              <li class="nav-two-item">
-                <a href="./article_list.html" class="nav-two-text">党政办公</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-one-item">
-            <a href="./teacher_list.html" class="nav-one-text">师资力量</a>
-          </li>
-          <li class="nav-one-item">
-            <a href="./article_list.html" class="nav-one-text">党的建设</a>
-          </li>
-          <li class="nav-one-item">
-            <a href="./article_list.html" class="nav-one-text">教学管理</a>
-          </li>
-          <li class="nav-one-item">
-            <a href="./article_list.html" class="nav-one-text">学生工作</a>
-          </li>
-          <li class="nav-one-item">
-            <a href="./article_list.html" class="nav-one-text">合作交流</a>
-          </li>
-        </ul>
+      <div class="header-bottom__medium">
+        <nav class="web-nav">
+          <a href="">律所首页</a>
+          <a href="">业务领域</a>
+          <a href="">律师团队</a>
+          <a href="">经典案例</a>
+          <a href="">法律知识</a>
+          <a href="">关于我们</a>
+        </nav>
       </div>
-
+      <div class="header-bottom__right">
+        <div class="web-search">
+          search
+        </div>
+      </div>
     </div>
-  </div>
+
+  </header>
 
   <!-- banner -->
   <section class="container-full">
@@ -886,56 +851,26 @@
     </div>
   </footer>
 
-  <script src="./js/lib/jquery.min.js"></script>
-  <script src="./js/lib/swiper-bundle.min.js"></script>
-  <script src="./js/lib/wow.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+  <script src="./js/wow.js"></script>
   <script src="./js/jquery.extends.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/theme.js"></script>
   <script>
     const bannerSwiper = new Swiper('#banner', {
       loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
       pagination: {
         el: '#bannerPagination',
-        clickable: true,
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: '#bannerNext',
-        prevEl: '#bannerPrev',
+        clickable: true
       },
     });
-
-    var teamSwiper = new Swiper('#team', {
-      slidesPerView: 1,
-      spaceBetween: 40,
-
-      breakpoints: {
-        320: {  //当屏幕宽度大于等于320
-          slidesPerView: 2,
-          spaceBetween: 10
-        },
-        768: {  //当屏幕宽度大于等于768 
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-        1280: {  //当屏幕宽度大于等于1280
-          slidesPerView: 4,
-          spaceBetween: 30
-        }
-      },
-
-      // 如果需要分页器
-      pagination: {
-        el: '#teamPagination',
-      },
-
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: '#teamNext',
-        prevEl: '#teamPrev',
-      }
-    })  
   </script>
 </body>
 

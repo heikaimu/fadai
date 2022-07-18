@@ -4,7 +4,7 @@
   @include flex-row-center;
   width: 40px;
   height: 40px;
-  border: 3px solid $color-theme-light;
+  border: 3px solid $color-theme;
   border-radius: 50%;
   background-color: $color-theme;
   color: $color-white;
@@ -15,7 +15,7 @@
 
   .iconfont {
     font-size: 20px;
-    color: $color-sub-theme;
+    // color: $color-sub-theme;
   }
 
   &.show {
@@ -24,7 +24,7 @@
   }
 
   &:hover {
-    background-color: $color-theme-light;
+    background-color: $color-theme;
     border: 3px solid $color-theme;
   }
 }

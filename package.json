@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass --watch sass:style --sourcemap=none --no-cache --style expanded"
+    "compile:sass": "sass --watch sass/main.scss:style/app.css --sourcemap=none --no-cache --style expanded"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dart-sass": "^1.25.0"
+  }
 }

@@ -408,13 +408,8 @@ div.pb_sys_common.pb_sys_normal.pb_sys_style1 span.p_goto a {
 }
 
 .header-top {
-  background: linear-gradient(180deg, #FFFAE2 0%, rgba(255, 248, 190, 0.19) 100%);
-}
-.header-top__content {
   height: 65px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #FFF4E2;
 }
 
 .banner .swiper-pagination-bullet {
