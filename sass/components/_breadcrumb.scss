@@ -1,0 +1,92 @@
+// 面包屑
+div.custom-breadcrumb {
+  @include flex-row-sb;
+  height: 70px;
+  padding: 20px;
+  padding-left: 40px;
+  // background-color: rgba($color: $color-black, $alpha: 0.6);
+  background-color: $color-white;
+  border-bottom: 2px solid $color-theme;
+
+  @include media-query($small) {
+    padding: 10px 0;
+    height: 40px;
+  }
+
+  h2.title {
+    font-size: 24px;
+    color: $color-theme;
+    font-weight: 900;
+
+    @include media-query($small) {
+      display: none;
+    }
+  }
+
+  div.breadcrumb-navs {
+    display: flex;
+    align-items: center;
+
+    @include media-query($small) {
+      padding-left: 20px;
+    }
+
+    p.pos {
+      font-size: $font-size-b;
+      color: rgba($color: $color-black, $alpha: .8);
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        @include iconfont;
+        position: relative;
+        top: -1px;
+        content: "\e60e";
+        display: block;
+        width: 17px;
+        height: 17px;
+        font-size: 14px;
+        color: rgba($color: $color-black, $alpha: .8);
+        margin-right: 4px;
+      }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: $font-size-b;
+        color: rgba($color: $color-black, $alpha: .8);
+        transition: 0.3s;
+
+        &::before {
+          font-family: "iconfont";
+          content: "\e63d";
+          margin-right: 8px;
+          margin-left: 5px;
+
+          @include media-query($small) {
+            margin-right: 5px;
+            font-size: 14px;
+          }
+        }
+
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+
+        &:hover {
+          color: $color-theme;
+
+          &::before {
+            color: #888888;
+          }
+        }
+      }
+    }
+  }
+}
