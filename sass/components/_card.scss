@@ -1,0 +1,123 @@
+.business-card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__icon {
+    display: block;
+    width: 8.5rem;
+    height: 8.5rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: all .3s ease-in-out;
+
+    &--1 {
+      background-image: url(../images/icon-area-1.png);
+    }
+
+    &--2 {
+      background-image: url(../images/icon-area-2.png);
+    }
+
+    &--3 {
+      background-image: url(../images/icon-area-3.png);
+    }
+
+    &--4 {
+      background-image: url(../images/icon-area-4.png);
+    }
+
+    &--5 {
+      background-image: url(../images/icon-area-5.png);
+    }
+
+    &--6 {
+      background-image: url(../images/icon-area-6.png);
+    }
+
+    &--7 {
+      background-image: url(../images/icon-area-7.png);
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    color: $color-title;
+    padding-top: 2rem;
+  }
+
+  &__link {
+    @include absolute;
+  }
+
+  &:hover &__title {
+    color: $color-primary;
+  }
+
+  &:hover &__icon {
+    &--1 {
+      background-image: url(../images/icon-area-1-light.png);
+    }
+
+    &--2 {
+      background-image: url(../images/icon-area-2-light.png);
+    }
+
+    &--3 {
+      background-image: url(../images/icon-area-3-light.png);
+    }
+
+    &--4 {
+      background-image: url(../images/icon-area-4-light.png);
+    }
+
+    &--5 {
+      background-image: url(../images/icon-area-5-light.png);
+    }
+
+    &--6 {
+      background-image: url(../images/icon-area-6-light.png);
+    }
+
+    &--7 {
+      background-image: url(../images/icon-area-7-light.png);
+    }
+  }
+}
+
+
+.lawyer-card {
+  &__image {
+    img {
+      display: block;
+    }
+  }
+
+  &__info {
+    background-color: $color-primary;
+  }
+
+  &__name {
+    font-size: 2.4rem;
+    color: $color-white;
+  }
+
+  &__level {
+
+  }
+
+  &__roles {
+    p {
+
+    }
+  }
+
+  &__desc {
+    
+  }
+
+}

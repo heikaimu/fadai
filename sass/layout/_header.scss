@@ -1,42 +1,110 @@
 .web-header {}
 
 .header-top {
-  background: linear-gradient(180deg, #FFFAE2 0%, rgba(255,248,190,0.1900) 100%);
+  background: linear-gradient(180deg, #FFFAE2 0%, rgba(255, 248, 190, 0.1900) 100%);
 
   &__content {
-    height: 65px;
+    height: 6.5rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__left {}
 
   &__right {}
 
-  &__button-wrapper {}
+  &__sign {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: $color-title;
+  }
 
-  &__button {}
+  &__button-wrapper {
+    display: flex;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: $color-title;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 
   &__button-icon {
-    &--one {}
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-1px);
 
-    &--two {}
+    &--one {
+      background-image: url(../images/icon-top-1.png);
+    }
 
-    &--three {}
+    &--two {
+      background-image: url(../images/icon-top-2.png);
+    }
+
+    &--three {
+      background-image: url(../images/icon-top-3.png);
+    }
   }
 }
 
 .header-bottom {
+
+  &__content {
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__left {
-    .web-logo {}
+    .web-logo {
+      img {
+        width: auto;
+        height: 6.5rem;
+      }
+    }
   }
 
   &__medium {
     .web-nav {
-      a {}
+      display: flex;
+      a {
+        font-size: 1.6rem;
+        color: $color-title;
+        font-weight: 600;
+        padding: 0 1rem;
+        line-height: 9rem;
+        margin: 0 1rem;
+        transition: all .3s ease-in-out;
+        &.active,
+        &:hover {
+          background-color: $color-primary;
+          color: $color-white;
+        }
+      }
     }
   }
 
-  &__right {}
+  &__right {
+
+  }
+}
+
+
+.web-search {
+  &__icon {
+    width: 21px;
+    height: 21px;
+  }
 }

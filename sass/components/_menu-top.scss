@@ -4,9 +4,9 @@
   @include flex-row-center;
   width: 40px;
   height: 40px;
-  border: 3px solid $color-theme;
+  border: 3px solid $color-primary;
   border-radius: 50%;
-  background-color: $color-theme;
+  background-color: $color-primary;
   color: $color-white;
   transition: 0.3s cubic-bezier(0.53, -0.31, 0.56, 2.18);
   transform: translate3d(50px, 0, 0);
@@ -15,7 +15,6 @@
 
   .iconfont {
     font-size: 20px;
-    // color: $color-sub-theme;
   }
 
   &.show {
@@ -24,7 +23,7 @@
   }
 
   &:hover {
-    background-color: $color-theme;
-    border: 3px solid $color-theme;
+    background-color: $color-primary;
+    border: 3px solid $color-primary;
   }
 }

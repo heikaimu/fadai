@@ -1,38 +1,54 @@
 body {
-  @include media-query($medium-down) {
-    padding-top: 60px;
+  font-family: Source Han Serif CN-SemiBold, Source Han Serif CN;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+
+.heading-primary {
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 5rem;
+
+  &--white &--main,
+  &--white &--sub {
+    color: $color-white;
+  }
+
+  &--main {
+    display: block;
+    font-size: 3rem;
+    color: $color-primary;
+    font-family: Source Han Serif CN-Heavy, Source Han Serif CN;
+    font-weight: 800;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
+
+    /*
+      animation-delay: 3s;
+      animation-iteration-count: 3;
+      */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.6rem;
+    font-family: Source Han Serif CN-Medium, Source Han Serif CN;
+    font-weight: 500;
+    color: #2F2F2F;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
   }
 }
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-#vsb_content ul,
-ol {
-  padding-left: 20px;
-}
-
-#vsb_content ol li {
-  list-style: decimal;
-}
-
-#vsb_content ul li {
-  list-style: disc;
-}
-
-p {
-  margin-bottom: 0;
-}
-
-h1,
-h2,
-h3 {
-  margin-bottom: 0;
-}
-

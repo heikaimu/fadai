@@ -1,13 +1,81 @@
-.banner {
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background-color: $color-white;
-    opacity: 1;
-    margin: 0 10px !important;
+.section-banner {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
-  .swiper-pagination-bullet-active {
-    background-color: $color-theme;
+  .swiper-pagination {
+    max-width: $grid-width;
+    padding: 0 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30%;
+    text-align: left;
+    .swiper-pagination-bullet {
+      width: 24px;
+      height: 2px;
+      background: $color-white;
+      border-radius: 0;
+    }
+    .swiper-pagination-bullet-active {
+      background: $color-primary;
+    }
   }
+}
+
+
+.section-introduce {
+  padding: 7rem 0;
+  background: #CF000E url(../images/bg-2.png) no-repeat center center / cover;
+  &__title {
+    font-size: 1.8rem;
+    color: $color-white;
+    margin-bottom: 3rem;
+  }
+  &__text {
+    font-size: 1.8rem;
+    color: $color-white;
+    margin-bottom: 1rem;
+  }
+}
+
+.lawyer-honor {
+  &__title {
+    font-size: 1.8rem;
+    color: $color-white;
+    margin-bottom: 3rem;
+  }
+  &__text {
+    font-size: 1.8rem;
+    color: $color-white;
+    margin-bottom: 1rem;
+    &::before {
+      @include iconfont;
+      content: "\e633";
+      position: relative;
+      top: -2px;
+      color: $color-yellow;
+      margin-right: 5px;
+    }
+  }
+}
+
+.section-business {
+  padding: 7rem 0;
+  background: #F1F1F1;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    list-style: none;
+  }
+}
+
+.section-team {
+  padding: 7rem 0;
+  background: #FFFFFB;
 }

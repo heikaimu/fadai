@@ -1,43 +1,23 @@
 // 色彩
-$color-theme: #CF000E;
-$color-theme-sub: #FFF4E2;
+$color-primary: #CF000E;
+
+$color-secondary: #FFF4E2;
+
 $color-title: #2f2f2f;
 $color-content: #5A5A5A;
 $color-border: #E5E5E5;
-$color-black: #000000;
+
+$color-grey-dark: #777;
+
 $color-white: #ffffff;
+$color-black: #000000;
+$color-yellow: #FFF06C;
 
-// 尺寸
-$font-size-s: 12px;
-$font-size-b: 14px;
-$font-size-m: 16px;
-$font-size-l: 18px;
+// FONT
+$default-font-size: 1.6rem;
 
-// 媒体查询相关
-$grid-medium: 768px;
-$grid-large: 1025px;
-$grid-widescreen: 1300px;
-
-$small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
-$less-1500: 'less-1500';
-$less-1900: 'less-1900';
-
-$grid-breakpoints: (
-  $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})',
-  $less-1500 '(max-width: 1500px)',
-  $less-1900 '(max-width: 1900px)'
-);
+// GRID
+$grid-width: 120rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
