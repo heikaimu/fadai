@@ -1,6 +1,11 @@
+.container {
+    max-width: $grid-width;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
 .row {
   max-width: $grid-width;
-  padding: 0 2rem;
   margin: 0 auto;
 
   &:not(:last-child) {

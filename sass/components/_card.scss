@@ -91,33 +91,172 @@
 
 
 .lawyer-card {
+  position: relative;
+
   &__image {
+    width: 100%;
+    height: 56rem;
+
     img {
+      width: 100%;
+      height: 100%;
       display: block;
+      object-fit: cover;
     }
   }
 
   &__info {
-    background-color: $color-primary;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3rem;
+    color: $color-white;
+    background: linear-gradient(to top, #000000, transparent);
+    transition: all .3s ease-in-out;
   }
 
   &__name {
+    display: inline-block;
     font-size: 2.4rem;
-    color: $color-white;
   }
 
   &__level {
-
+    display: inline-block;
+    padding: 0 .8rem;
+    background-color: $color-primary;
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+    color: $color-white;
+    margin-left: 1rem;
+    transition: all .3s ease-in-out;
   }
 
   &__roles {
-    p {
+    padding-top: 1.2rem;
 
+    p {
+      font-size: 1.6rem;
+      line-height: 2;
     }
   }
 
   &__desc {
-    
+    padding-top: 1.2rem;
+    font-size: 1.4rem;
+    display: none;
+    transition: all .3s ease-in-out;
   }
+
+  .counsel-button {
+    display: none;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover .counsel-button {
+    display: inline-block;
+  }
+
+  &:hover &__info {
+    background: linear-gradient(to top, $color-primary, $color-primary);
+  }
+
+  &:hover &__desc {
+    display: block;
+  }
+
+  &:hover &__level {
+    background-color: $color-yellow;
+    color: $color-primary;
+  }
+
+  &__link {
+    @include absolute;
+  }
+
+}
+
+
+.case-card {
+  border-top: 2px solid $color-primary;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  &__header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    color: $color-primary;
+  }
+
+  &__more {
+    padding: 2px 4px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    color: $color-content;
+    transition: all .3s ease-in-out;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__list {}
+
+  &__nav {
+    @include omit;
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    color: $color-content;
+    transition: all .3s ease-in-out;
+
+    &::before {
+      content: "·";
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 2rem;
+    color: $color-title;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    display: block;
+    width: 6.2rem;
+    height: 6.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    p {
+      font-size: 1.6rem;
+      color: $color-content;
+    }
+  }
+
 
 }
