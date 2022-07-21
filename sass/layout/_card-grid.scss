@@ -1,0 +1,17 @@
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -2rem;
+  margin-right: -2rem;
+
+  .card-col {
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 33.33%;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+}
