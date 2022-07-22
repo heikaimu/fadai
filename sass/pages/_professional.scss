@@ -1,0 +1,61 @@
+.professional-side-nav {
+  &__title {
+    font-size: 3rem;
+    color: $color-white;
+    padding-left: 5rem;
+    line-height: 12rem;
+    background-color: $color-primary;
+  }
+
+  &__list {
+    padding: 2.8rem 1.8rem;
+    margin-top: 1.6rem;
+    border: 1px solid $color-border;
+  }
+
+  &__item {
+    list-style: none;
+  }
+}
+
+.third-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  border: 1px solid #ECECEC;
+  li {
+    width: 20%;
+    list-style: none;
+    padding: 0.6rem;
+  }
+  a {
+    display: block;
+    line-height: 5.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 1px solid #f1f1f1;
+    color: $color-title;
+
+    &:hover,
+    &.active {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+}
+
+
+.field-list {
+  padding: 2rem;
+  border: 1px solid #ECECEC;
+  border-top: none;
+  li {
+    list-style: none;
+    padding: 2rem 0 4rem 0;
+    border-bottom: 1px dashed #ECECEC;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -137,13 +137,20 @@
   }
 }
 
-@mixin section {
-  padding: 7rem 0;
-  @include media-query($large-down) {
-    padding: 5rem 0;
+@mixin textLine($color: $color-primary) {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    border-bottom: 1px solid $color;
+    flex: 1;
   }
-  @include media-query($medium-down) {
-    padding: 3rem 0;
+  &::before {
+    margin-right: 1rem;
+  }
+  &::after {
+    margin-left: 1rem;
   }
 }
 

@@ -192,6 +192,10 @@
       transition: all .3s ease-in-out;
       cursor: pointer;
 
+      &:last-child {
+        border-bottom: none;
+      }
+
       &:hover {
         background-color: $color-secondary;
         color: $color-primary;
@@ -218,6 +222,76 @@
     p {
       font-size: 1.8rem;
       color: $color-title;
+    }
+  }
+}
+
+.section-partner {
+  padding: 7rem 0;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  &__item {
+    flex: 1;
+    list-style: none;
+    padding: 1rem;
+    a {
+      display: inline-block;
+      transition: all .3s ease-in-out;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      a {
+        outline: 1px solid $color-primary;
+        outline-offset: 5px;
+      }
+    }
+  }
+}
+
+.section-consult {
+  padding: 5rem 0;
+  background: url(../images/bg-3.png) no-repeat center center / cover;
+
+  &__content {
+    padding: 2.5rem 26rem;
+    background-color: rgba($color: $color-white, $alpha: 0.6);
+  }
+
+  &__heading {
+    max-width: 48rem;
+    margin: 0 auto;
+    &--main {
+      display: block;
+      font-size: 3rem;
+      color: $color-title;
+    }
+    &--sub {
+      @include textLine(#E5E5E5);
+      display: flex;
+      align-items: center;
+      font-size: 2.4rem;
+      color: $color-primary;
+    }
+  }
+
+  &__form {
+    display: grid;
+
+    p {
+      padding: 1.4rem 0;
+      font-size: 1.4rem;
+      color: $color-title;
+      text-align: center;
     }
   }
 }

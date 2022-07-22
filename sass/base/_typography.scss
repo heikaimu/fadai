@@ -52,3 +52,16 @@ body {
     }
   }
 }
+
+.inner-page {
+  display: flex;
+  &__left {
+    width: 29rem;
+    flex: none;
+  }
+
+  &__right {
+    flex: 1;
+    margin-left: 1.6rem;
+  }
+}

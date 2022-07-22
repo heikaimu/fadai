@@ -6,41 +6,19 @@
   align-items: center;
 
   &__icon {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 8.5rem;
     height: 8.5rem;
     border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-color: $color-white;
     transition: all .3s ease-in-out;
 
-    &--1 {
-      background-image: url(../images/icon-area-1.png);
-    }
-
-    &--2 {
-      background-image: url(../images/icon-area-2.png);
-    }
-
-    &--3 {
-      background-image: url(../images/icon-area-3.png);
-    }
-
-    &--4 {
-      background-image: url(../images/icon-area-4.png);
-    }
-
-    &--5 {
-      background-image: url(../images/icon-area-5.png);
-    }
-
-    &--6 {
-      background-image: url(../images/icon-area-6.png);
-    }
-
-    &--7 {
-      background-image: url(../images/icon-area-7.png);
+    svg {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-primary;
     }
   }
 
@@ -59,36 +37,74 @@
   }
 
   &:hover &__icon {
-    &--1 {
-      background-image: url(../images/icon-area-1-light.png);
-    }
+    background-color: $color-primary;
 
-    &--2 {
-      background-image: url(../images/icon-area-2-light.png);
-    }
-
-    &--3 {
-      background-image: url(../images/icon-area-3-light.png);
-    }
-
-    &--4 {
-      background-image: url(../images/icon-area-4-light.png);
-    }
-
-    &--5 {
-      background-image: url(../images/icon-area-5-light.png);
-    }
-
-    &--6 {
-      background-image: url(../images/icon-area-6-light.png);
-    }
-
-    &--7 {
-      background-image: url(../images/icon-area-7-light.png);
+    svg {
+      fill: $color-white;
     }
   }
 }
 
+.inner-business-card {
+  height: 7rem;
+  padding: 0 3rem;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    @include iconfont;
+    content: "\e7ef";
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #F1F1F1;
+    transition: all .3s ease-in-out;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $color-primary;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    color: $color-title;
+    padding-left: 1rem
+  }
+
+  &__link {
+    @include absolute;
+  }
+
+  &:hover {
+    background-color: $color-secondary;
+  }
+
+  &:hover &__title {
+    color: $color-primary;
+  }
+
+  &:hover &__icon {
+    background-color: $color-primary;
+
+    svg {
+      fill: $color-white;
+    }
+  }
+}
 
 .lawyer-card {
   position: relative;
@@ -202,6 +218,7 @@
     border-radius: 2px;
     color: $color-content;
     transition: all .3s ease-in-out;
+
     &:hover {
       background-color: $color-primary;
       color: $color-white;
@@ -259,4 +276,92 @@
   }
 
 
+}
+
+.field-card {
+  position: relative;
+  display: flex;
+
+  &__cover {
+    width: 30rem;
+    height: 18rem;
+    flex: none;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &__info {
+    padding-left: 2rem;
+    flex: 1;
+  }
+
+  &__title {
+    @include omits(2);
+    font-size: 2.4rem;
+    color: $color-title;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+    transition: all .3s ease-in-out;
+  }
+
+  &__desc {
+    @include omits(2);
+    font-size: 1.3rem;
+    color: $color-content;
+    transition: all .3s ease-in-out;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+  }
+
+  &__more {
+    width: 14.5rem;
+    line-height: 4rem;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+    font-size: 1.3rem;
+    color: $color-content;
+    transition: all .3s ease-in-out;
+  }
+
+  &__views {
+    font-size: 1.3rem;
+    color: $color-content;
+    transition: all .3s ease-in-out;
+  }
+
+  &__link {
+    @include absolute;
+  }
+
+  &:hover &__cover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  &:hover &__title,
+  &:hover &__desc {
+    color: $color-primary;
+  }
+
+  &:hover &__more {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &:hover &__views {
+    color: $color-primary;
+  }
 }
