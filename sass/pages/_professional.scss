@@ -23,14 +23,18 @@
   flex-wrap: wrap;
   padding: 1rem 2rem;
   border: 1px solid #ECECEC;
+  border-bottom: none;
+
   li {
     width: 20%;
     list-style: none;
     padding: 0.6rem;
   }
+
   a {
     display: block;
     line-height: 5.5rem;
+    border-radius: 4px;
     text-align: center;
     font-size: 1.4rem;
     border: 1px solid #f1f1f1;
@@ -48,14 +52,199 @@
 .field-list {
   padding: 2rem;
   border: 1px solid #ECECEC;
-  border-top: none;
+
   li {
     list-style: none;
     padding: 2rem 0 4rem 0;
     border-bottom: 1px dashed #ECECEC;
 
+    &:first-child {
+      padding-top: 0;
+    }
+
     &:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
   }
+}
+
+
+.article-details {
+  border: 1px solid $color-border;
+
+  &__main {
+    padding: 5rem 7rem;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: $color-title;
+    margin-bottom: 2rem;
+
+    @include respond(tab-port) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 3rem;
+
+    span {
+      display: inline-block;
+      font-size: 1.3rem;
+      color: $color-content;
+      margin-right: 3rem;
+    }
+  }
+
+  article {
+    p {
+      margin: 2rem 0;
+      font-size: 1.6rem;
+      color: $color-content;
+      line-height: 2.8rem;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 2rem auto;
+    }
+  }
+
+  &__pagination {
+    padding: 3rem 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &__nex-prev {
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      @include linkHover;
+      display: block;
+      font-size: 1.4rem;
+      color: #6A6A6A;
+      line-height: 2;
+    }
+  }
+
+  &__back {
+    @include btnHover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14.5rem;
+    height: 4rem;
+    text-align: center;
+    background: $color-primary;
+    font-size: 1.3rem;
+    color: $color-white;
+
+    &::before {
+      @include iconfont;
+      content: "\e616";
+      margin-right: 4px;
+      font-size: 2rem;
+    }
+  }
+}
+
+.related-recommend {
+  &__title {
+    line-height: 7.2rem;
+    background-color: $color-primary;
+    padding-left: 3rem;
+    font-size: 3rem;
+    color: $color-white;
+  }
+
+  &__list {
+    padding: 0 3rem;
+    border: 1px solid $color-border;
+
+    li {
+      padding: 2rem 0;
+      border-bottom: 1px dashed $color-border;
+      list-style: none;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $color-content;
+        position: absolute;
+        left: -1.5rem;
+        top: 2.7rem;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        @include omits(2);
+        @include linkHover;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: $color-content;
+      }
+    }
+  }
+}
+
+.about-us-content {
+  padding: 3rem 4rem;
+  border: 1px solid $color-border;
+
+  &__title {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: $color-title;
+  }
+
+  article {
+    p {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $color-content;
+      text-indent: 2em;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+  }
+
+  &__item {
+    padding: 0.8rem;
+    width: 33.33%;
+    list-style: none;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+    
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
 }

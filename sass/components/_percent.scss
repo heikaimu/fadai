@@ -1,0 +1,17 @@
+.percent {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: $color-white;
+  position: relative;
+  &__text {
+    @include absCenter;
+    font-size: 4rem;
+    font-weight: 800;
+    color: $color-primary;
+    &::after {
+      content: "%";
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -15,7 +15,6 @@
   &__right {}
 
   &__sign {
-    font-weight: 800;
     font-size: 1.6rem;
     color: $color-title;
   }
@@ -27,7 +26,6 @@
   &__button {
     display: flex;
     align-items: center;
-    font-weight: 800;
     font-size: 1.6rem;
     color: $color-title;
     &:not(:last-child) {

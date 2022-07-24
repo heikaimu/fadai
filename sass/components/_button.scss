@@ -49,24 +49,34 @@
     color: $color-white;
   }
 
-  
+
 }
 
 .counsel-button {
   display: inline-block;
-  padding: 0 4rem;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
   height: 5rem;
   background: #FFD86B;
-  font-size: 1.4rem;
+  border: 1px solid #FFD86B;
+  font-size: 1.6rem;
   color: $color-primary;
   line-height: 5rem;
-  &::before {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    content: "";
-    background: url(../images/icon-phone.png) no-repeat center center / cover;
-    transform: translateY(2px);
-    margin-right: 5px;
+
+  &--primary {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: $color-white;
+  }
+
+  &--plain {
+    border: 1px solid #FFD86B;
+    background: transparent;
+    color: #FFD86B;
+  }
+
+  .iconfont {
+    font-size: 1.8rem;
   }
 }

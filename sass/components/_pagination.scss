@@ -1,0 +1,42 @@
+.pagination-wrapper {
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid $color-border;
+  border-top: none;
+}
+
+.pagination {
+  display: inline-block;
+
+  &__prev,
+  &__next,
+  &__page {
+    display: inline-block;
+    padding: 0 1.2rem;
+    border-radius: 2px;
+    line-height: 3.4rem;
+    border: 1px solid $color-border;
+    margin: 0.5rem;
+    font-size: 1.4rem;
+    color: $color-title;
+    transition: all .3s ease-in-out;
+
+    &:hover,
+    &.active {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    @include respond(tab-port) {
+      line-height: 4rem;
+      padding: 0 3rem;
+    }
+  }
+
+  &__page {
+    display: inline-block;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}

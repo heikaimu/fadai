@@ -205,10 +205,12 @@
 
   &__answer {
     padding: 4rem 4rem 4rem 0;
+
     h2 {
       font-size: 3rem;
       color: $color-title;
       margin-bottom: 1rem;
+
       &::before {
         content: "";
         display: inline-block;
@@ -219,6 +221,7 @@
         margin-right: 0.5rem;
       }
     }
+
     p {
       font-size: 1.8rem;
       color: $color-title;
@@ -240,9 +243,11 @@
     flex: 1;
     list-style: none;
     padding: 1rem;
+
     a {
       display: inline-block;
       transition: all .3s ease-in-out;
+
       img {
         display: block;
         width: 100%;
@@ -270,11 +275,13 @@
   &__heading {
     max-width: 48rem;
     margin: 0 auto;
+
     &--main {
       display: block;
       font-size: 3rem;
       color: $color-title;
     }
+
     &--sub {
       @include textLine(#E5E5E5);
       display: flex;
@@ -293,5 +300,79 @@
       color: $color-title;
       text-align: center;
     }
+  }
+}
+
+.section-lawyer-team {
+  padding: 7rem 0;
+
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+  }
+
+  &__item {
+    padding: 0.8rem;
+    width: 33.33%;
+    list-style: none;
+
+    @include respond(tab-land) {
+      width: 50%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}
+
+
+.section-team-power {
+  padding: 7rem 0;
+  background: url(../images/bg-4.png) no-repeat center center / cover;
+}
+
+.section-service-rule {
+  padding: 7rem 0;
+  background-color: #FFFFFB;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+  }
+
+  &__item {
+    padding: 0.8rem;
+    width: 50%;
+    list-style: none;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+  }
+}
+
+
+.section-classic-case {
+  padding: 7rem 0;
+
+  &__list {
+    padding: 2rem;
+    border: 1px solid $color-border;
+  }
+
+  &__item {
+    list-style: none;
+  }
+  
+  &__item:not(:last-child) {
+    margin-bottom: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px dashed $color-border;
   }
 }

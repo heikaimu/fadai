@@ -1,6 +1,6 @@
 body {
   font-family: Source Han Serif CN-SemiBold, Source Han Serif CN;
-  font-weight: 400;
+  font-weight: 800;
   /*font-size: 16px;*/
   line-height: 1.7;
   color: $color-grey-dark;
@@ -22,7 +22,6 @@ body {
     font-size: 3rem;
     color: $color-primary;
     font-family: Source Han Serif CN-Heavy, Source Han Serif CN;
-    font-weight: 800;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -55,13 +54,48 @@ body {
 
 .inner-page {
   display: flex;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &--reverse &__left {
+    margin-left: 1.6rem;
+    @include respond(tab-port) {
+      margin-left: 0;
+      margin-top: 1.6rem;
+    }
+  }
+
+  &--reverse &__right {
+    margin-left: 0;
+  }
+
   &__left {
     width: 29rem;
     flex: none;
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__right {
     flex: 1;
     margin-left: 1.6rem;
+    @include respond(tab-port) {
+      margin-left: 0;
+      margin-top: 1.6rem;
+    }
   }
+}
+
+.inner-wrapper {
+  padding: 7rem 0;
 }

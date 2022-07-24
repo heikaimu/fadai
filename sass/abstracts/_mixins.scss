@@ -104,6 +104,7 @@
 
 // 滚动条
 @mixin scroll-bar($size: 7px) {
+
   /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
   &::-webkit-scrollbar {
     width: $size;
@@ -138,6 +139,7 @@
 }
 
 @mixin textLine($color: $color-primary) {
+
   &::before,
   &::after {
     content: "";
@@ -146,19 +148,46 @@
     border-bottom: 1px solid $color;
     flex: 1;
   }
+
   &::before {
     margin-right: 1rem;
   }
+
   &::after {
     margin-left: 1rem;
   }
 }
 
+@mixin linkHover($color: $color-primary) {
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $color;
+  }
+
+  &:active {
+    filter: brightness(.8);
+  }
+}
+
+@mixin btnHover($bgColor: $color-primary, $textColor: $color-white) {
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background-color: $bgColor;
+    color: $textColor;
+  }
+
+  &:active {
+    filter: brightness(.8);
+  }
+}
+
 @mixin clearfix {
   &::after {
-      content: "";
-      display: table;
-      clear: both;
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 
@@ -189,17 +218,35 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
-  @if $breakpoint == phone {
-      @media only screen and (max-width: 37.5em) { @content };    //600px
+  @if $breakpoint ==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content
+    }
+
+    ; //600px
   }
-  @if $breakpoint == tab-port {
-      @media only screen and (max-width: 56.25em) { @content };     //900px
+
+  @if $breakpoint ==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content
+    }
+
+    ; //900px
   }
-  @if $breakpoint == tab-land {
-      @media only screen and (max-width: 75em) { @content };    //1200px
+
+  @if $breakpoint ==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content
+    }
+
+    ; //1200px
   }
-  @if $breakpoint == big-desktop {
-      @media only screen and (min-width: 112.5em) { @content };    //1800
+
+  @if $breakpoint ==big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content
+    }
+
+    ; //1800
   }
 }
-

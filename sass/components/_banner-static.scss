@@ -12,9 +12,21 @@
     object-fit: cover;
   }
 
-  h2 {
+  &__info {
     @include absCenter;
-    font-size: 2.8rem;
+    max-width: $grid-width;
     color: $color-white;
+  }
+
+  h2 {
+    font-size: 4.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  h3 {
+    font-size: 3.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
