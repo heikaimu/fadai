@@ -1,11 +1,37 @@
+// url('../font-family/SourceHanSerifCN-Bold-2.otf'),
+// url('../font-family/SourceHanSerifCN-ExtraLight-3.otf'),
+// url('../font-family/SourceHanSerifCN-Heavy-4.otf'),
+// url('../font-family/SourceHanSerifCN-Light-5.otf'),
+// url('../font-family/SourceHanSerifCN-Medium-6.otf'),
+// url('../font-family/SourceHanSerifCN-Regular-1.otf'),
+// url('../font-family/SourceHanSerifCN-SemiBold-7.otf');
+
+@font-face{
+  font-family: fontHeavy;
+  src: url('../font-family/SourceHanSerifCN-Bold-2.otf');
+}
+
+@font-face{
+  font-family: fontNormal;
+  src: url('../font-family/SourceHanSerifCN-Medium-6.otf');
+}
+
+@font-face{
+  font-family: fontLight;
+  src: url('../font-family/SourceHanSerifCN-Light-5.otf');
+}
+
 body {
-  font-family: Source Han Serif CN-SemiBold, Source Han Serif CN;
-  font-weight: 800;
+  font-family: fontNormal;
+  font-weight: 400;
   /*font-size: 16px;*/
   line-height: 1.7;
   color: $color-grey-dark;
 }
 
+h1, h2, h3, h4 {
+  font-family: fontHeavy;
+}
 
 .heading-primary {
   text-transform: uppercase;
@@ -21,7 +47,6 @@ body {
     display: block;
     font-size: 3rem;
     color: $color-primary;
-    font-family: Source Han Serif CN-Heavy, Source Han Serif CN;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -29,7 +54,6 @@ body {
 
     @include respond(phone) {
       letter-spacing: 1rem;
-      font-family: 5rem;
     }
 
     /*
@@ -41,7 +65,6 @@ body {
   &--sub {
     display: block;
     font-size: 1.6rem;
-    font-family: Source Han Serif CN-Medium, Source Han Serif CN;
     font-weight: 500;
     color: #2F2F2F;
     animation: moveInRight 1s ease-out;
@@ -98,4 +121,36 @@ body {
 
 .inner-wrapper {
   padding: 7rem 0;
+}
+
+// 律师的头部
+.lawyer-heading {
+  display: flex;
+  align-items: center;
+
+  &--main {
+    display: inline-block;
+    font-size: 3.2rem;
+    color: $color-title;
+  }
+
+  &--sub {
+    display: inline-block;
+    padding: 0 .8rem;
+    background-color: $color-primary;
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+    color: $color-white;
+    margin-left: 1rem;
+    transition: all .3s ease-in-out;
+    font-family: fontNormal;
+  }
+
+  &--small &--main {
+    font-size: 2.4rem;
+  }
+
+  &--center {
+    justify-content: center;
+  }
 }

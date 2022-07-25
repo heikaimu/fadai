@@ -131,6 +131,23 @@
     }
   }
 
+  &--white {
+    border: 1px solid $color-border;
+  }
+
+  &--white &__image {
+    height: 50rem;
+    padding-bottom: 16.5rem;
+
+    @include respond(tab-port) {
+      padding-bottom: 14rem;
+    }
+  }
+
+  &--white &__info {
+    background: $color-white;
+  }
+
   &__info {
     position: absolute;
     left: 0;
@@ -140,7 +157,16 @@
     color: $color-white;
     background: linear-gradient(to top, #000000, transparent);
     transition: all .3s ease-in-out;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+    }
   }
+
+  &--white &__info {
+    color: $color-title;
+  }
+
 
   &__name {
     display: inline-block;
@@ -156,7 +182,6 @@
     color: $color-white;
     margin-left: 1rem;
     transition: all .3s ease-in-out;
-    font-weight: 600;
   }
 
   &__roles {
@@ -183,11 +208,16 @@
 
     @include respond(tab-port) {
       display: flex;
+      margin-top: 2rem;
     }
 
     .counsel-button {
       flex: 1;
     }
+  }
+
+  &--white &__button-wrapper {
+    display: flex;
   }
 
   &__button-item {
@@ -203,10 +233,20 @@
 
   &:hover &__info {
     background: linear-gradient(to top, $color-primary, $color-primary);
+    @include respond(tab-port) {
+      background: transparent;
+    }
+  }
+
+  &--white:hover &__info {
+    background: $color-white;
   }
 
   &:hover &__desc {
     display: block;
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &:hover &__level {
@@ -214,8 +254,67 @@
     color: $color-primary;
   }
 
+  &--white:hover &__level {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
   &__link {
     @include absolute;
+  }
+
+}
+
+.lawyer-card-3 {
+  border: 1px solid $color-border;
+  padding: 3rem;
+  padding-top: 6rem;
+  position: relative;
+  margin-top: 4rem;
+  &__cover {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, -50%, 0);
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__medium {
+    padding-bottom: 2.5rem
+  }
+
+  &__skill-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    @include textLine($color-content);
+    margin-bottom: 1rem;
+  }
+
+  &__skills {
+    @include omits(2);
+    font-size: 1.5rem;
+    color: $color-content;
+  }
+
+  &__bottom {
+    width: 15rem;
+    margin: 0 auto;
   }
 
 }
@@ -310,11 +409,19 @@
   position: relative;
   display: flex;
 
+  @include respond(tab-port) {
+    display: block;
+  }
+
   &__cover {
     width: 30rem;
     height: 18rem;
     flex: none;
     overflow: hidden;
+    @include respond(tab-port) {
+      width: 100%;
+      height: 25rem;
+    }
 
     img {
       display: block;
@@ -328,6 +435,11 @@
   &__info {
     padding-left: 2rem;
     flex: 1;
+
+    @include respond(tab-port) {
+      padding-left: 0;
+      padding-top: 2rem;
+    }
   }
 
   &--lawyer &__title {
@@ -352,6 +464,7 @@
     font-size: 1.3rem;
     color: $color-content;
     transition: all .3s ease-in-out;
+    font-family: fontHeavy;
   }
 
   &__bottom {
@@ -369,12 +482,14 @@
     font-size: 1.3rem;
     color: $color-content;
     transition: all .3s ease-in-out;
+    font-family: fontHeavy;
   }
 
   &__views {
     font-size: 1.3rem;
     color: $color-content;
     transition: all .3s ease-in-out;
+    font-family: fontHeavy;
   }
 
   &__link {
@@ -450,79 +565,4 @@
     font-size: 1.6rem;
     font-weight: 500;
   }
-}
-
-
-.ab-lawyer-card {
-  border: 1px solid $color-border;
-  padding: 3rem;
-  padding-top: 6rem;
-  position: relative;
-  margin-top: 4rem;
-  &__cover {
-    width: 9rem;
-    height: 9rem;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate3d(-50%, -50%, 0);
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__top {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  &__name {
-    display: inline-block;
-    font-size: 2.4rem;
-    color: $color-title;
-  }
-
-  &__role {
-    display: inline-block;
-    padding: 0 .8rem;
-    background-color: $color-primary;
-    line-height: 2.2rem;
-    font-size: 1.6rem;
-    color: $color-white;
-    margin-left: 1rem;
-    transition: all .3s ease-in-out;
-    font-weight: 600;
-  }
-
-  &__medium {
-    padding-bottom: 2.5rem
-  }
-
-  &__skill-title {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    @include textLine($color-content);
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-
-  &__skills {
-    @include omits(2);
-    font-size: 1.5rem;
-    color: $color-content;
-    font-weight: 600;
-  }
-
-  &__bottom {
-    width: 15rem;
-    margin: 0 auto;
-  }
-
 }

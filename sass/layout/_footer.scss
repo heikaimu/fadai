@@ -15,9 +15,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 3rem 0;
+
+    @include respond(tab-land) {
+      flex-direction: column;
+    }
   }
 
   &__logo {
+    @include respond(tab-land) {
+      margin-bottom: 3rem;
+    }
     img {
       display: block;
       width: 19.4rem;
@@ -30,6 +37,10 @@
     text-align: center;
     color: $color-white;
 
+    @include respond(tab-land) {
+      padding: 0;
+    }
+
     h2 {
       font-size: 2.4rem;
       margin-bottom: 1rem;
@@ -37,6 +48,9 @@
   }
 
   &__info-list {
+    @include respond(tab-land) {
+      margin-bottom: 3rem;
+    }
     p {
       display: inline-block;
       font-size: 1.6rem;

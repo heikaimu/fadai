@@ -19,10 +19,18 @@
 
     h2 {
       font-size: 4.8rem;
+
+      @include respond(tab-port) {
+        font-size: 2.8rem;
+      }
     }
 
     h3 {
       font-size: 3.6rem;
+
+      @include respond(tab-port) {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -33,6 +41,11 @@
     transform: translateX(-50%);
     bottom: 30%;
     text-align: left;
+
+    @include respond(tab-port) {
+      text-align: center;
+      bottom: 1rem;
+    }
 
     .swiper-pagination-bullet {
       width: 24px;
@@ -93,18 +106,17 @@
   background: #F1F1F1;
 
   &__list {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__item {
-    list-style: none;
+    @include grid(2rem, 7, 5, 3);
   }
 }
 
 .section-team {
   padding: 7rem 0;
   background: #FFFFFB;
+
+  &__list {
+    @include grid(1.6rem, 3, 2, 1);
+  }
 }
 
 
@@ -117,6 +129,10 @@
 
 .section-case {
   padding: 7rem 0;
+
+  &__list {
+    @include grid(6rem, 3, 2, 1);
+  }
 }
 
 .section-service {
@@ -165,6 +181,10 @@
     border-bottom: 1px solid $color-border;
     position: relative;
 
+    @include respond(tab-port) {
+      padding: 2rem 0;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -175,11 +195,18 @@
       left: 30%;
       top: 0;
       bottom: 0;
+      @include respond(tab-port) {
+        display: none;
+      }
     }
   }
 
   &__question {
     padding: 2rem;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
 
     p {
       @include omit;
@@ -196,7 +223,8 @@
         border-bottom: none;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         background-color: $color-secondary;
         color: $color-primary;
       }
@@ -205,6 +233,10 @@
 
   &__answer {
     padding: 4rem 4rem 4rem 0;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
 
     h2 {
       font-size: 3rem;
@@ -233,32 +265,21 @@
   padding: 7rem 0;
 
   &__list {
-    display: flex;
-    justify-content: space-between;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    @include grid(2rem, 6, 3, 2);
   }
 
-  &__item {
-    flex: 1;
-    list-style: none;
-    padding: 1rem;
+  a {
+    display: inline-block;
+    transition: all .3s ease-in-out;
 
-    a {
-      display: inline-block;
-      transition: all .3s ease-in-out;
-
-      img {
-        display: block;
-        width: 100%;
-      }
+    img {
+      display: block;
+      width: 100%;
     }
 
     &:hover {
-      a {
-        outline: 1px solid $color-primary;
-        outline-offset: 5px;
-      }
+      outline: 1px solid $color-primary;
+      outline-offset: 5px;
     }
   }
 }
@@ -270,6 +291,10 @@
   &__content {
     padding: 2.5rem 26rem;
     background-color: rgba($color: $color-white, $alpha: 0.6);
+
+    @include respond(tab-port) {
+      padding: 2rem 3rem;
+    }
   }
 
   &__heading {
@@ -280,6 +305,10 @@
       display: block;
       font-size: 3rem;
       color: $color-title;
+
+      @include respond(tab-port) {
+        font-size: 2.4rem;
+      }
     }
 
     &--sub {
@@ -288,6 +317,10 @@
       align-items: center;
       font-size: 2.4rem;
       color: $color-primary;
+
+      @include respond(tab-port) {
+        font-size: 1.8rem;
+      }
     }
   }
 
@@ -305,27 +338,8 @@
 
 .section-lawyer-team {
   padding: 7rem 0;
-
-
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -0.8rem;
-    margin-right: -0.8rem;
-  }
-
-  &__item {
-    padding: 0.8rem;
-    width: 33.33%;
-    list-style: none;
-
-    @include respond(tab-land) {
-      width: 50%;
-    }
-
-    @include respond(tab-port) {
-      width: 100%;
-    }
+    @include grid(1.6rem, 3, 2, 1);
   }
 }
 
@@ -333,6 +347,10 @@
 .section-team-power {
   padding: 7rem 0;
   background: url(../images/bg-4.png) no-repeat center center / cover;
+
+  &__list {
+    @include grid(1rem, 4, 2, 2);
+  }
 }
 
 .section-service-rule {
@@ -374,5 +392,11 @@
     margin-bottom: 2rem;
     padding-bottom: 3rem;
     border-bottom: 1px dashed $color-border;
+  }
+}
+
+.section-recommend-lawyer {
+  &__list {
+    @include grid(1.6rem, 3, 2, 1);
   }
 }

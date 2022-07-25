@@ -198,6 +198,25 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin grid($gutter: 1rem, $pc: 4, $land: 2, $port: 1) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-#{$gutter} / 2);
+
+  &>.item {
+    list-style: none;
+    padding: calc(#{$gutter} / 2);
+    width: calc((1 / #{$pc}) * 100%);
+
+    @include respond(tab-land) {
+      width: calc((1 / #{$land}) * 100%);
+    }
+
+    @include respond(tab-port) {
+      width: calc((1 / #{$port}) * 100%);
+    }
+  }
+}
 
 // MEDIA QUERY MANAGER
 /*
