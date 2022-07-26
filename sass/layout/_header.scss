@@ -23,6 +23,15 @@
 
   &__button-wrapper {
     display: flex;
+    .qr-code {
+      display: block;
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
+  &__button-wrapper>* {
+    margin-left: 3rem;
   }
 
   &__button {
@@ -31,9 +40,6 @@
     font-size: 1.6rem;
     color: $color-title;
     font-family: fontHeavy;
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
   }
 
   &__button-icon {

@@ -1,0 +1,19 @@
+.popover {
+  position: relative;
+  display: inline-block;
+
+  &__title {
+    display: inline-block;
+  }
+
+  &__content {
+    position: absolute;
+    padding: 20px;
+    background-color: rgba($color: #000000, $alpha: .6);
+    border-radius: 4px;
+    left: 50%;
+    bottom: 0;
+    z-index: 999;
+    transform: translate3d(-50%, 110%, 0);
+  }
+}

@@ -4,7 +4,7 @@
  * @Autor: Yaowen Liu
  * @Date: 2020-05-29 14:00:50
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-04-27 10:30:39
+ * @LastEditTime: 2022-07-26 13:14:34
  */
 (function ($) {
   // 数字滚动
@@ -33,15 +33,15 @@
     }, stepTime);
   }
 
-// 导航特效
-//   <nav class="web-nav">
-//   <ul class="nav-list">
-//     <li class="nav-item active"><a href="./index.html">首页</a></li>
-//     <li class="nav-item"><a href="./list-jpsd.html">佳片速递</a></li>
-//     <li class="nav-item"><a href="./list-gcjc.html">国潮剧场</a></li>
-//     <li class="nav-item"><a href="./list-jdyy.html">经典影院</a></li>
-//   </ul>
-// </nav>
+  // 导航特效
+  //   <nav class="web-nav">
+  //   <ul class="nav-list">
+  //     <li class="nav-item active"><a href="./index.html">首页</a></li>
+  //     <li class="nav-item"><a href="./list-jpsd.html">佳片速递</a></li>
+  //     <li class="nav-item"><a href="./list-gcjc.html">国潮剧场</a></li>
+  //     <li class="nav-item"><a href="./list-jdyy.html">经典影院</a></li>
+  //   </ul>
+  // </nav>
   $.fn.lavaLamp = function (o) {
     o = $.extend({
       fx: "linear",
@@ -141,7 +141,7 @@
     const duration = params.duration || 300;
 
     // 显示隐藏
-    $(window).scroll(function(){
+    $(window).scroll(function () {
       if ($(this).scrollTop() > offset) {
         menu.addClass('show');
       } else {
@@ -150,7 +150,7 @@
     });
 
     // 点击事件
-    menu.on('click', function(event) {
+    menu.on('click', function (event) {
       event.preventDefault();
       $('body,html').animate(
         {
@@ -160,4 +160,43 @@
       );
     })
   }
+
+  $.fn.popover = function (params) {
+    this.each(function () {
+      const wrapper = $(this);
+
+      const title = wrapper.find(params.title);
+      const content = wrapper.find(params.content);
+      content.hide();
+
+      let trigger = 'click';
+      if (params && params.trigger === 'hover') {
+        trigger = 'mouseover';
+      }
+
+      title.on(trigger, function () {
+        content.show();
+      })
+
+      onClickOutside(wrapper[0], () => {
+        content.hide();
+      })
+    })
+  }
 }(jQuery));
+
+/**
+ * 点击目标之外
+ * @param {Element} target - 目标
+ * @param {Function} handler - 点击事件
+ */
+function onClickOutside(target, handler) {
+  window.addEventListener('click', function (event) {
+    const composedPath = event.composedPath();
+    if (composedPath.includes(target)) {
+      return;
+    }
+
+    handler(event);
+  })
+}

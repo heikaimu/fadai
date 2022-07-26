@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-25 17:45:59
+ * @LastEditTime: 2022-07-26 13:32:15
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -51,10 +51,19 @@
                 <span class="header-top__button-icon header-top__button-icon--one"></span>
                 免费咨询：13352071690
               </a>
-              <a href="" class="header-top__button">
-                <span class="header-top__button-icon header-top__button-icon--two"></span>
-                微信咨询
-              </a>
+
+              <div class="popover">
+                <div class="popover__title">
+                  <a href="" class="header-top__button">
+                    <span class="header-top__button-icon header-top__button-icon--two"></span>
+                    微信咨询
+                  </a>
+                </div>
+                <div class="popover__content">
+                  <img class="qr-code" src="./images/qr_code.png" alt="">
+                </div>
+              </div>
+
               <a href="" class="header-top__button">
                 <span class="header-top__button-icon header-top__button-icon--three"></span>
                 立即咨询
@@ -83,13 +92,24 @@
             </nav>
           </div>
           <div class="header-bottom__right">
-            <div class="web-search">
+            <div class="popover">
+              <div class="popover__title">
+                <img class="web-search__icon" src="./images/icon-search.png" alt="" srcset="">
+              </div>
+              <div class="popover__content">
+                <div class="search-input">
+                  <input type="text" class="search-input__input" placeholder="搜索关键字">
+                  <a href="" class="search-input__button"></a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="web-search">
               <img class="web-search__icon" src="./images/icon-search.png" alt="" srcset="">
               <div class="search-wrapper">
                 <input type="text">
                 <span class="iconfont icon-close"></span>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -537,7 +557,7 @@
         <span class="section-service__arrow"></span>
         <div class="service-card">
           <h2 class="service-card__title">一审</h2>
-          <img src="./images/icon-s-1.png" alt="">
+          <img src="./images/icon-s-2.png" alt="">
           <div class="service-card__info">
             <p>·诉讼代理</p>
             <p>·审结期限</p>
@@ -546,7 +566,7 @@
         <span class="section-service__arrow"></span>
         <div class="service-card">
           <h2 class="service-card__title">二审</h2>
-          <img src="./images/icon-s-1.png" alt="">
+          <img src="./images/icon-s-3.png" alt="">
           <div class="service-card__info">
             <p>·上诉期限</p>
             <p>·诉讼代理</p>
@@ -555,7 +575,7 @@
         <span class="section-service__arrow"></span>
         <div class="service-card">
           <h2 class="service-card__title">执行</h2>
-          <img src="./images/icon-s-1.png" alt="">
+          <img src="./images/icon-s-4.png" alt="">
           <div class="service-card__info">
             <p>·判决时限</p>
             <p>·执行判决</p>
@@ -564,7 +584,7 @@
         <span class="section-service__arrow"></span>
         <div class="service-card">
           <h2 class="service-card__title">归档</h2>
-          <img src="./images/icon-s-1.png" alt="">
+          <img src="./images/icon-s-5.png" alt="">
           <div class="service-card__info">
             <p>·一案一档</p>
             <p>·电子查阅</p>
@@ -820,6 +840,11 @@
       $(".section-problem__answer").eq(index).show().siblings().hide();
     }
 
+    $('.popover').popover({
+      trigger: 'hover',
+      title: '.popover__title',
+      content: '.popover__content'
+    });
   </script>
 </body>
 

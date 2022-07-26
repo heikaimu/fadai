@@ -38,3 +38,39 @@
     }
   }
 }
+
+
+.search-input {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    width: 20rem;
+    padding: 0 2rem;
+    height: 4rem;
+    background: #F1F1F1;
+    opacity: 1;
+    border: none;
+    outline: none;
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  &__button {
+    @include btnHover;
+    position: relative;
+    display: block;
+    width: 5rem;
+    height: 4rem;
+    background-color: $color-primary;
+    border-radius: 0 2rem 2rem 0;
+
+    &::after {
+      @include iconfont;
+      @include absCenter;
+      content: "\e8ef";
+      position: absolute;
+      font-size: 2rem;
+      color: $color-white;
+    }
+  }
+}
