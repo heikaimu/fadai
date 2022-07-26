@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-26 13:32:15
+ * @LastEditTime: 2022-07-26 18:08:42
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -76,12 +76,15 @@
     <div class="header-bottom">
       <div class="container">
         <div class="header-bottom__content">
+
+          <span data-hamburg class="header-bottom__hamburg iconfont icon-daohang-caidan"></span>
+
           <div class="header-bottom__left">
             <a href="" class="web-logo">
               <img src="./images/logo.png" alt="">
             </a>
           </div>
-          <div class="header-bottom__medium">
+          <div class="header-bottom__medium" data-nav>
             <nav class="web-nav">
               <a href="" class="active">律所首页</a>
               <a href="">业务领域</a>
@@ -841,10 +844,13 @@
     }
 
     $('.popover').popover({
-      trigger: 'hover',
       title: '.popover__title',
       content: '.popover__content'
     });
+
+    $('[data-hamburg]').click(function() {
+      $('[data-nav]').addClass('active');
+    })
   </script>
 </body>
 
