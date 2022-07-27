@@ -106,7 +106,7 @@
   background: #F1F1F1;
 
   &__list {
-    @include grid(2rem, 7, 5, 3);
+    @include gridList(2rem, 7, 5, 3);
   }
 }
 
@@ -115,7 +115,7 @@
   background: #FFFFFB;
 
   &__list {
-    @include grid(1.6rem, 3, 2, 1);
+    @include gridList(1.6rem, 3, 2, 1);
   }
 }
 
@@ -131,7 +131,7 @@
   padding: 7rem 0;
 
   &__list {
-    @include grid(6rem, 3, 2, 1);
+    @include gridList(6rem, 3, 2, 1);
   }
 }
 
@@ -265,7 +265,7 @@
   padding: 7rem 0;
 
   &__list {
-    @include grid(2rem, 6, 3, 2);
+    @include gridList(2rem, 6, 3, 2);
   }
 
   a {
@@ -339,7 +339,7 @@
 .section-lawyer-team {
   padding: 7rem 0;
   &__list {
-    @include grid(1.6rem, 3, 2, 1);
+    @include gridList(1.6rem, 3, 2, 1);
   }
 }
 
@@ -349,7 +349,7 @@
   background: url(../images/bg-4.png) no-repeat center center / cover;
 
   &__list {
-    @include grid(1rem, 4, 2, 2);
+    @include gridList(1rem, 4, 2, 2);
   }
 }
 
@@ -369,7 +369,7 @@
     width: 50%;
     list-style: none;
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       width: 100%;
     }
   }
@@ -397,6 +397,6 @@
 
 .section-recommend-lawyer {
   &__list {
-    @include grid(1.6rem, 3, 2, 1);
+    @include gridList(1.6rem, 3, 2, 1);
   }
 }

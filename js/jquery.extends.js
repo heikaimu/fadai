@@ -4,7 +4,7 @@
  * @Autor: Yaowen Liu
  * @Date: 2020-05-29 14:00:50
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-26 13:14:34
+ * @LastEditTime: 2022-07-27 11:23:08
  */
 (function ($) {
   // 数字滚动
@@ -175,11 +175,11 @@
       }
 
       title.on(trigger, function () {
-        content.show();
+        content.slideDown();
       })
 
       onClickOutside(wrapper[0], () => {
-        content.hide();
+        content.slideUp();
       })
     })
   }

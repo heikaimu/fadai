@@ -16,13 +16,13 @@
     align-items: center;
     padding: 3rem 0;
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       flex-direction: column;
     }
   }
 
   &__logo {
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       margin-bottom: 3rem;
     }
     img {
@@ -37,7 +37,7 @@
     text-align: center;
     color: $color-white;
 
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       padding: 0;
     }
 
@@ -48,7 +48,7 @@
   }
 
   &__info-list {
-    @include respond(tab-land) {
+    @include respond(tab-port) {
       margin-bottom: 3rem;
     }
     p {
