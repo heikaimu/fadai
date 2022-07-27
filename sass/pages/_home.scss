@@ -137,8 +137,7 @@
 
 .section-service {
   padding: 7rem 0;
-  // background: #feeab2 url(../images/bg-1.png) no-repeat center center / cover;
-  background: linear-gradient(#feeab2, #ffffff);
+  background: #feeab2 url(../images/bg-1.png) no-repeat center center / cover;
 
   &__step {
     display: flex;
@@ -195,6 +194,7 @@
       left: 30%;
       top: 0;
       bottom: 0;
+
       @include respond(tab-port) {
         display: none;
       }
@@ -205,7 +205,7 @@
     padding: 2rem;
 
     @include respond(tab-port) {
-      padding: 0;
+      padding: 1rem;
     }
 
     p {
@@ -235,7 +235,7 @@
     padding: 4rem 4rem 4rem 0;
 
     @include respond(tab-port) {
-      padding: 0;
+      padding: 1rem;
     }
 
     h2 {
@@ -268,19 +268,10 @@
     @include gridList(2rem, 6, 3, 2);
   }
 
-  a {
-    display: inline-block;
-    transition: all .3s ease-in-out;
 
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    &:hover {
-      outline: 1px solid $color-primary;
-      outline-offset: 5px;
-    }
+  img {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -338,6 +329,7 @@
 
 .section-lawyer-team {
   padding: 7rem 0;
+
   &__list {
     @include gridList(1.6rem, 3, 2, 1);
   }
@@ -387,7 +379,7 @@
   &__item {
     list-style: none;
   }
-  
+
   &__item:not(:last-child) {
     margin-bottom: 2rem;
     padding-bottom: 3rem;

@@ -265,6 +265,135 @@
 
 }
 
+.animate-lawyer-card {
+  position: relative;
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    height: 56rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__sub-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3rem;
+    color: $color-white;
+    background: linear-gradient(to top, #000000, transparent);
+    transition: all .3s ease-in-out;
+    opacity: 1;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__main-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3rem;
+    color: $color-white;
+    background: linear-gradient(to top, $color-primary, $color-primary);
+    transition: all .3s ease-in-out;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      background: linear-gradient(to top, #000000, transparent);
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    font-size: 2.4rem;
+  }
+
+  &__level {
+    display: inline-block;
+    padding: 0 .8rem;
+    background-color: $color-primary;
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+    color: $color-white;
+    margin-left: 1rem;
+    transition: all .3s ease-in-out;
+  }
+
+  &__roles {
+    padding-top: 1.2rem;
+
+    p {
+      font-size: 1.6rem;
+      line-height: 2;
+    }
+  }
+
+  &__desc {
+    padding-top: 1.2rem;
+    font-size: 1.4rem;
+    transition: all .3s ease-in-out;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+
+    @include respond(tab-port) {
+      display: flex;
+      margin-top: 2rem;
+    }
+
+    .counsel-button {
+      flex: 1;
+    }
+  }
+
+  &__button-item {
+    padding: 0 0.8rem !important;
+    ;
+    width: 50% !important;
+    list-style: none;
+  }
+
+  &:hover &__sub-info {
+    opacity: 0;
+  }
+
+  &:hover &__main-info {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  &:hover &__level {
+    background-color: $color-yellow;
+    color: $color-primary;
+  }
+
+  &__link {
+    @include absolute;
+  }
+
+}
+
 .lawyer-card-3 {
   border: 1px solid $color-border;
   padding: 3rem;

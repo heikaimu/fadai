@@ -84,6 +84,10 @@
     font-size: 1.6rem;
     color: $color-title;
     font-family: fontHeavy;
+    cursor: pointer;
+    &:hover {
+      color: $color-primary;
+    }
 
     @include respond(tab-port) {
       font-size: 1.6rem;

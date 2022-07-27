@@ -718,6 +718,127 @@ h1, h2, h3, h4 {
   z-index: 0;
 }
 
+.animate-lawyer-card {
+  position: relative;
+  overflow: hidden;
+}
+.animate-lawyer-card__image {
+  width: 100%;
+  height: 56rem;
+}
+.animate-lawyer-card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.animate-lawyer-card__sub-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem;
+  color: #ffffff;
+  background: linear-gradient(to top, #000000, transparent);
+  transition: all .3s ease-in-out;
+  opacity: 1;
+}
+@media only screen and (max-width: 56.25em) {
+  .animate-lawyer-card__sub-info {
+    display: none;
+  }
+}
+.animate-lawyer-card__main-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem;
+  color: #ffffff;
+  background: linear-gradient(to top, #CF000E, #CF000E);
+  transition: all .3s ease-in-out;
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+}
+@media only screen and (max-width: 56.25em) {
+  .animate-lawyer-card__main-info {
+    padding: 2rem;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(to top, #000000, transparent);
+  }
+}
+.animate-lawyer-card__name {
+  display: inline-block;
+  font-size: 2.4rem;
+}
+.animate-lawyer-card__level {
+  display: inline-block;
+  padding: 0 .8rem;
+  background-color: #CF000E;
+  line-height: 2.2rem;
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-left: 1rem;
+  transition: all .3s ease-in-out;
+}
+.animate-lawyer-card__roles {
+  padding-top: 1.2rem;
+}
+.animate-lawyer-card__roles p {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+.animate-lawyer-card__desc {
+  padding-top: 1.2rem;
+  font-size: 1.4rem;
+  transition: all .3s ease-in-out;
+}
+@media only screen and (max-width: 56.25em) {
+  .animate-lawyer-card__desc {
+    display: none;
+  }
+}
+.animate-lawyer-card__button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .animate-lawyer-card__button-wrapper {
+    display: flex;
+    margin-top: 2rem;
+  }
+}
+.animate-lawyer-card__button-wrapper .counsel-button {
+  flex: 1;
+}
+.animate-lawyer-card__button-item {
+  padding: 0 0.8rem !important;
+  width: 50% !important;
+  list-style: none;
+}
+.animate-lawyer-card:hover .animate-lawyer-card__sub-info {
+  opacity: 0;
+}
+.animate-lawyer-card:hover .animate-lawyer-card__main-info {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.animate-lawyer-card:hover .animate-lawyer-card__level {
+  background-color: #FFF06C;
+  color: #CF000E;
+}
+.animate-lawyer-card__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .lawyer-card-3 {
   border: 1px solid #E5E5E5;
   padding: 3rem;
@@ -1200,8 +1321,8 @@ h1, h2, h3, h4 {
 .back-top-menu {
   position: fixed;
   top: auto;
-  right: 30px;
-  bottom: 30px;
+  right: 2rem;
+  bottom: 8rem;
   left: auto;
   z-index: 9999;
   display: flex;
@@ -1492,6 +1613,10 @@ h1, h2, h3, h4 {
   font-size: 1.6rem;
   color: #2f2f2f;
   font-family: fontHeavy;
+  cursor: pointer;
+}
+.header-top__button:hover {
+  color: #CF000E;
 }
 @media only screen and (max-width: 56.25em) {
   .header-top__button {
@@ -1725,10 +1850,20 @@ h1, h2, h3, h4 {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__nav {
+    justify-content: space-between;
+  }
+}
 .footer__nav a {
   font-size: 1.4rem;
   color: #ffffff;
   margin: 0 4rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__nav a {
+    margin: 0;
+  }
 }
 .footer__nav a:hover {
   filter: brightness(0.8);
@@ -1927,7 +2062,7 @@ h1, h2, h3, h4 {
 
 .section-service {
   padding: 7rem 0;
-  background: linear-gradient(#feeab2, #ffffff);
+  background: #feeab2 url(../images/bg-1.png) no-repeat center center/cover;
 }
 .section-service__step {
   display: flex;
@@ -1995,7 +2130,7 @@ h1, h2, h3, h4 {
 }
 @media only screen and (max-width: 56.25em) {
   .section-problem__question {
-    padding: 0;
+    padding: 1rem;
   }
 }
 .section-problem__question p {
@@ -2023,7 +2158,7 @@ h1, h2, h3, h4 {
 }
 @media only screen and (max-width: 56.25em) {
   .section-problem__answer {
-    padding: 0;
+    padding: 1rem;
   }
 }
 .section-problem__answer h2 {
@@ -2068,17 +2203,9 @@ h1, h2, h3, h4 {
     width: calc((1 / 2) * 100%);
   }
 }
-.section-partner a {
-  display: inline-block;
-  transition: all .3s ease-in-out;
-}
-.section-partner a img {
+.section-partner img {
   display: block;
   width: 100%;
-}
-.section-partner a:hover {
-  outline: 1px solid #CF000E;
-  outline-offset: 5px;
 }
 
 .section-consult {

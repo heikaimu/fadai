@@ -84,10 +84,18 @@
     display: flex;
     justify-content: center;
 
+    @include respond(tab-port) {
+      justify-content: space-between;
+    }
+
     a {
       font-size: 1.4rem;
       color: $color-white;
       margin: 0 4rem;
+
+      @include respond(tab-port) {
+        margin: 0;
+      }
 
       &:hover {
         filter: brightness(.8);
