@@ -1,5 +1,26 @@
 .form-item {
   height: 100%;
+
+  &--error input,
+  &--error textarea {
+    outline: 2px solid $color-error!important;
+  }
+
+  &--error small {
+    transform: translate3d(0, 0, 0)!important;
+    opacity: 1!important;
+  }
+
+  &--success input,
+  &--success textarea {
+    outline: 2px solid $color-success!important;
+  }
+
+  &--success small {
+    transform: translate3d(0, 0, 0)!important;
+    opacity: 1!important;
+  }
+
   input {
     width: 100%;
     padding: 0 2rem;
@@ -9,6 +30,7 @@
     opacity: 1;
     border: none;
     outline: none;
+    border-radius: 2px;
   }
 
   textarea {
@@ -20,22 +42,34 @@
     opacity: 1;
     border: none;
     outline: none;
+    border-radius: 2px;
   }
 
-  a {
+  a,
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
+    border: none;
     width: 100%;
     height: 100%;
     background-color: $color-primary;
     font-size: 1.6rem;
     color: $color-white;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 
     &:active {
       filter: brightness(.8);
     }
+  }
+
+  small {
+    color: $color-error;
+    transition: all .3s ease-in-out;
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
   }
 }
 

@@ -1240,6 +1240,20 @@ h1, h2, h3, h4 {
 .form-item {
   height: 100%;
 }
+.form-item--error input, .form-item--error textarea {
+  outline: 2px solid #F56C6C !important;
+}
+.form-item--error small {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+}
+.form-item--success input, .form-item--success textarea {
+  outline: 2px solid #67C23A !important;
+}
+.form-item--success small {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+}
 .form-item input {
   width: 100%;
   padding: 0 2rem;
@@ -1249,6 +1263,7 @@ h1, h2, h3, h4 {
   opacity: 1;
   border: none;
   outline: none;
+  border-radius: 2px;
 }
 .form-item textarea {
   width: 100%;
@@ -1259,20 +1274,32 @@ h1, h2, h3, h4 {
   opacity: 1;
   border: none;
   outline: none;
+  border-radius: 2px;
 }
-.form-item a {
+.form-item a,
+.form-item button {
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
+  border: none;
   width: 100%;
   height: 100%;
   background-color: #CF000E;
   font-size: 1.6rem;
   color: #ffffff;
   transition: all .3s ease-in-out;
+  cursor: pointer;
 }
-.form-item a:active {
+.form-item a:active,
+.form-item button:active {
   filter: brightness(0.8);
+}
+.form-item small {
+  color: #F56C6C;
+  transition: all .3s ease-in-out;
+  transform: translate3d(0, -10px, 0);
+  opacity: 0;
 }
 
 .search-input {
@@ -1470,7 +1497,7 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-rows: repeat(4, 5rem);
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5rem;
+  grid-gap: 3rem;
 }
 @media only screen and (max-width: 56.25em) {
   .gallery {

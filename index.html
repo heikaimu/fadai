@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-27 11:06:53
+ * @LastEditTime: 2022-07-28 09:51:59
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -359,7 +359,7 @@
               </p>
               <ul class="animate-lawyer-card__button-wrapper">
                 <li class="animate-lawyer-card__button-item">
-                   <a href="" class="counsel-button"><span class="iconfont icon-kaihuzixun"></span> 在线咨询</a>
+                  <a href="" class="counsel-button"><span class="iconfont icon-kaihuzixun"></span> 在线咨询</a>
                 </li>
               </ul>
             </div>
@@ -666,27 +666,31 @@
           <div class="gallery">
             <div class="gallery__item gallery__item--1">
               <div class="form-item">
-                <input type="text" placeholder="请输入您的姓名">
+                <input type="text" id="username" placeholder="请输入您的姓名">
+                <small>错误信息</small>
               </div>
             </div>
             <div class="gallery__item gallery__item--2">
               <div class="form-item">
-                <input type="text" placeholder="请输入您的电话，我们给您回电">
+                <input type="number" id="phone" placeholder="请输入您的电话，我们给您回电">
+                <small>错误信息</small>
               </div>
             </div>
             <div class="gallery__item gallery__item--3">
               <div class="form-item">
-                <textarea name="" id="" cols="30" rows="10" placeholder="请输入您的留言"></textarea>
+                <textarea name="" id="message" cols="30" rows="10" placeholder="请输入您的留言"></textarea>
+                <small>错误信息</small>
               </div>
             </div>
             <div class="gallery__item gallery__item--4">
               <div class="form-item">
-                <a href="">立即提交</a>
+                <button type="submit" data-form-submit>提交</button>
               </div>
             </div>
           </div>
           <p>提交后，我们会有专门的律师跟您联系！</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -772,8 +776,8 @@
       },
     });
 
-    $(".section-problem__question p").each(function() {
-      $(this).click(function() {
+    $(".section-problem__question p").each(function () {
+      $(this).click(function () {
         activeQuestion($(this).index());
       })
     })
@@ -790,13 +794,87 @@
       content: '.popover__content'
     });
 
-    $('[data-hamburg]').click(function() {
+    $('[data-hamburg]').click(function () {
       $('[data-nav]').addClass('active');
     })
 
-    $('[data-hamburg-close]').click(function() {
+    $('[data-hamburg-close]').click(function () {
       $('[data-nav]').removeClass('active');
     })
+
+    // 表单提交
+    const username = $("#username");
+    const phone = $("#phone");
+    const message = $("#message");
+
+    $("[data-form-submit]").click(function () {
+      const queue = [
+        checkRequired(username),
+        checkPhone(phone),
+        checkRequired(message),
+      ]
+
+      Promise.all(queue).then(res => {
+        const success = res.every(item => item.status === 'success');
+        if (success) {
+          alert('这里写提交逻辑')
+        }
+      })
+    })
+
+    username.on('input', function() {
+      checkRequired(username);
+    })
+
+    phone.on('input', function() {
+      checkPhone(phone);
+    })
+
+    message.on('input', function() {
+      checkRequired(message);
+    })
+
+    function checkRequired($el) {
+      if ($el.val() === '') {
+        return errorFn($el, '不能为空');
+      } else {
+        return successFn($el);
+      }
+    }
+
+    async function checkPhone($el) {
+      const { status } = await checkRequired($el);
+      if (status === 'error') {
+        return Promise.resolve({
+          status: 'error'
+        })
+      } else {
+        const reg = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+        if (!reg.test($el.val())) {
+          return errorFn($el, '手机格式错误');
+        } else {
+          return successFn($el);
+        }
+      }
+    }
+
+    function successFn($el) {
+      $el.parent('.form-item').removeClass('form-item--error');
+      $el.parent('.form-item').addClass('form-item--success');
+      $el.siblings('small').text('');
+      return Promise.resolve({
+        status: 'success'
+      })
+    }
+
+    function errorFn($el, text) {
+      $el.parent('.form-item').addClass('form-item--error');
+      $el.parent('.form-item').removeClass('form-item--success');
+      $el.siblings('small').text(text);
+      return Promise.resolve({
+        status: 'error'
+      })
+    }
   </script>
 </body>
 
