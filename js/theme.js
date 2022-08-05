@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-04-08 17:12:42
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-06-22 10:51:22
- * @FilePath: /school-gitlab/t-smart/js/theme.js
+ * @LastEditTime: 2022-08-05 17:50:24
+ * @FilePath: /fadai-lawyer/js/theme.js
  */
 
 $(function () {
@@ -142,13 +142,13 @@ function mainNavToggle() {
             if (navTwoBox.css("display") === "none") {
               navTwoBox.slideDown();
               navTwoOpenButton
-                .removeClass("icon-plus")
-                .addClass("icon-reduce1");
+                .removeClass("icon-down")
+                .addClass("icon-up");
             } else {
               navTwoBox.slideUp();
               navTwoOpenButton
-                .addClass("icon-plus")
-                .removeClass("icon-reduce1");
+                .addClass("icon-down")
+                .removeClass("icon-up");
             }
           });
 

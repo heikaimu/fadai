@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-28 09:51:59
+ * @LastEditTime: 2022-08-05 17:42:33
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@
                     微信咨询
                   </p>
                 </div>
-                <div class="popover__content header-top__wx-content">
+                <div class="popover__content header-top__wx-content clipboard" data-clipboard-text="L12312321">
                   <img class="qr-code" src="./images/qr_code.png" alt="">
                 </div>
               </div>
@@ -86,28 +86,47 @@
           </div>
           <div class="header-bottom__medium" data-nav>
             <span data-hamburg-close class="header-bottom__close iconfont icon-guanbi only-mobile"></span>
-            <nav class="web-nav">
-              <a href="" class="active">律所首页</a>
-              <a href="">业务领域</a>
-              <a href="">律师团队</a>
-              <a href="">经典案例</a>
-              <a href="">法律知识</a>
-              <a href="">关于我们</a>
-            </nav>
-          </div>
-          <!-- <div class="header-bottom__right">
-            <div class="popover">
-              <div class="popover__title">
-                <span class="iconfont icon-sousuo header-bottom__search-icon"></span>
-              </div>
-              <div class="popover__content header-bottom__search-content">
-                <div class="search-input">
-                  <input type="text" class="search-input__input" placeholder="搜索关键字">
-                  <a href="" class="search-input__button"></a>
-                </div>
-              </div>
+            <div class="web-nav" data-nav-content>
+              <ul class="web-nav__1-list" data-nav>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./" class="web-nav__1-link active" data-nav-lv1-text>学校概况</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./" class="web-nav__1-link" data-nav-lv1-text>师资力量</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./single_page.html" class="web-nav__1-link web-nav__1-link--arrow" data-nav-lv1-text>人才培养</a>
+                  <span class="web-nav__1-open iconfont icon-down" data-nav-lv2-open></span>
+                  <ul class="web-nav__2-list" data-nav-lv2-wrapper>
+                    <li class="web-nav__2-item" data-nav-lv2>
+                      <a href="./teacher_list.html" class="web-nav__2-link">三级菜单啊</a>
+                    </li>
+                    <li class="web-nav__2-item" data-nav-lv2>
+                      <a href="./teacher_list.html" class="web-nav__2-link">航次观测</a>
+                    </li>
+                    <li class="web-nav__2-item" data-nav-lv2>
+                      <a href="./article_list.html" class="web-nav__2-link">自动观测</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./teacher_list.html" class="web-nav__1-link" data-nav-lv1-text>科学研究</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./article_list.html" class="web-nav__1-link" data-nav-lv1-text>党建思政</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./article_list.html" class="web-nav__1-link" data-nav-lv1-text>院友天地</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./article_list.html" class="web-nav__1-link" data-nav-lv1-text>科普园地</a>
+                </li>
+                <li class="web-nav__1-item" data-nav-lv1>
+                  <a href="./article_list.html" class="web-nav__1-link" data-nav-lv1-text>合作交流</a>
+                </li>
+              </ul>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -158,14 +177,14 @@
       </h1>
 
       <div class="row">
-        <div class="col-2-of-3">
+        <div class="col-3-of-5">
           <p class="section-introduce__title">律所介绍：</p>
           <p class="section-introduce__text">
             天津法岱律师事务所，是一家秉承着“以事实维护权益，用真心化解纠纷”的文化核心理念，以“尊崇事实、扬善护正、法如泰山、依法正行”为法律服务宗旨的综合性法律服务机构。
             业务范围涵盖民事、刑事、企业法律顾问三大领域，根据这些领域形成纵向的法律服务模式。根据不同案件类型，组建专业律师团队，由资深律师带队办案，团队专业知识完备。各团队根据自身办案领域定期开展专业知识学习，从而具备一流的办案技巧及团队协作能力。案源中心接受当事人委托后，统一由行政部门分配案件，每周各团队在资深律师的带领下，开展案件研讨会议，以不同角度分析案件案情，全方位、多层次的剖析案件。
           </p>
         </div>
-        <div class="col-1-of-3">
+        <div class="col-2-of-5">
           <div class="lawyer-honor">
             <p class="lawyer-honor__title">律所荣誉：</p>
             <p class="lawyer-honor__text">天津市文明单位</p>
@@ -190,7 +209,7 @@
         <span class="heading-primary--sub">精准、专业、优质的为每一位当事人提供法律服务</span>
       </h1>
 
-      <ul class="section-business__list">
+      <ul class="section-business__list section-business__list--more7">
         <li class="item">
           <div class="business-card">
             <span class="business-card__icon">
@@ -314,7 +333,7 @@
 
       <div class="u-center-text u-margin-top-big">
         <div class="consult-button">
-          <a href="" class="consult-button__phone">咨询热线：133-5207-1690</a>
+          <a href="tel:13254622315" class="consult-button__phone">咨询热线：133-5207-1690</a>
           <a href="" class="consult-button__online"><span class="iconfont kaihuzixun"></span> 在线咨询更多业务</a>
         </div>
       </div>
@@ -614,7 +633,7 @@
 
       <div class="u-center-text u-margin-top-big">
         <div class="consult-button">
-          <a href="" class="consult-button__phone">咨询热线：133-5207-1690</a>
+          <a href="tel:13254622315" class="consult-button__phone">咨询热线：133-5207-1690</a>
           <a href="" class="consult-button__online"><span class="iconfont kaihuzixun"></span> 在线咨询更多业务</a>
         </div>
       </div>
@@ -758,10 +777,15 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/swiper-bundle.min.js"></script>
   <script src="./js/wow.js"></script>
+  <script src="./js/clipboard.min.js"></script>
+  <script src="./js/coco-message.js"></script>
   <script src="./js/jquery.extends.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/theme.js"></script>
   <script>
+
+    createClip();
+
     const bannerSwiper = new Swiper('#banner', {
       loop: true,
       speed: 2000,
@@ -822,15 +846,15 @@
       })
     })
 
-    username.on('input', function() {
+    username.on('input', function () {
       checkRequired(username);
     })
 
-    phone.on('input', function() {
+    phone.on('input', function () {
       checkPhone(phone);
     })
 
-    message.on('input', function() {
+    message.on('input', function () {
       checkRequired(message);
     })
 
@@ -874,6 +898,20 @@
       return Promise.resolve({
         status: 'error'
       })
+    }
+
+    function createClip() {
+      const clipboard = new Clipboard('.clipboard');
+
+      clipboard.on('success', function (e) {
+        cocoMessage.success(2000, "复制成功", function () {
+          console.log("close");
+        });
+      });
+
+      clipboard.on('error', function (e) {
+
+      });
     }
   </script>
 </body>

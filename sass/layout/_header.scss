@@ -151,11 +151,11 @@
 
   &__close {
     font-size: 3rem;
-    color: $color-primary;
+    color: $color-white;
     cursor: pointer;
     position: absolute;
     top: 2rem;
-    left: 3rem;
+    right: 3rem;
   }
 
   &__left {
@@ -185,11 +185,7 @@
       top: 0;
       bottom: 0;
       z-index: 999;
-      background-color: $color-secondary;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      background-color: rgba($color-black, .6);
       transition: all .3s ease-in-out;
       transform: translate3d(-100%, 0, 0);
       opacity: 0;
@@ -198,39 +194,6 @@
     &.active {
       transform: translate3d(0, 0, 0);
       opacity: 1;
-    }
-
-    .web-nav {
-      display: flex;
-
-      @include respond(tab-port) {
-        display: block;
-      }
-
-      a {
-        font-size: 1.6rem;
-        color: $color-title;
-        padding: 0 1rem;
-        line-height: 9rem;
-        margin: 0 1rem;
-        transition: all .3s ease-in-out;
-
-        &.active,
-        &:hover {
-          background-color: $color-primary;
-          color: $color-white;
-        }
-
-        @include respond(tab-port) {
-          display: block;
-          text-align: center;
-          width: 20rem;
-          font-size: 2rem;
-          line-height: 9rem;
-          margin: 0;
-        }
-
-      }
     }
   }
 
@@ -265,5 +228,193 @@
   &__icon {
     width: 21px;
     height: 21px;
+  }
+}
+
+
+// web-nav
+.web-nav {
+
+  @include respond(tab-port) {
+    @include fixed(0, auto, 0, 0, 99999);
+    width: 35rem;
+    background-color: $color-white;
+    overflow-y: auto;
+  }
+
+  // 1
+  &__1-list {
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
+  &__1-item {
+    list-style: none;
+    position: relative;
+  }
+
+  &__1-link {
+    display: block;
+    padding: 0 2rem;
+    font-size: $nav1-size;
+    line-height: 9rem;
+    color: $nav1-color;
+    background: $nav1-bg;
+
+    @include respond(tab-port) {
+      padding: 0 4rem;
+      border-bottom: 1px solid rgba($color: $color-white, $alpha: 0.2);
+      border-radius: 0;
+      height: auto;
+      line-height: 7rem;
+    }
+
+    &.active {
+      color: $nav1-color-active;
+      font-weight: 600;
+      background: $nav1-bg-active;
+
+      @include respond(tab-port) {}
+    }
+
+    &--arrow {
+      &::after {
+        @include iconfont;
+        content: "\e7ee";
+
+        @include respond(tab-port) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__1-open {
+    display: none;
+
+    @include respond(tab-port) {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      display: block;
+      width: 6rem;
+      height: 6rem;
+      font-size: 2rem;
+      color: $color-title;
+      text-align: center;
+      line-height: 6rem;
+    }
+
+  }
+
+  // 2
+  &__2-list {
+    @include absolute(auto, auto, auto, 0, 9999);
+    padding: 1rem 0;
+    border-radius: 0 0 1rem 1rem;
+    background-color: $nav2-wrapper;
+    display: none;
+    top: 9rem;
+
+    @include respond(tab-port) {
+      position: static;
+      padding-left: 4rem;
+      background-color: transparent;
+    }
+  }
+
+  &__2-item {
+    list-style: none;
+    position: relative;
+  }
+
+  &__2-link {
+    display: block;
+    padding: 0.5rem 2rem;
+    font-size: $nav2-size;
+    line-height: 3rem;
+    color: $nav2-color;
+    white-space: nowrap;
+
+    @include respond(tab-port) {
+      // color: $color-white;
+      line-height: 5rem;
+    }
+
+    &:hover {
+      color: $nav2-color-active;
+      font-weight: 600;
+      background: $nav2-bg-active;
+    }
+
+    &--arrow {
+      &::after {
+        @include iconfont;
+        content: "\e63d";
+
+        @include respond(tab-port) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__2-open {
+    display: none;
+
+    @include respond(tab-port) {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      display: block;
+      width: 6rem;
+      height: 4rem;
+      font-size: 2rem;
+      color: $color-white;
+      text-align: center;
+      line-height: 4rem;
+    }
+
+  }
+
+  // 3
+  &__3-list {
+    @include absolute(0, auto, auto, 100%, 9999);
+    padding: 1rem 0;
+    border-radius: 0 0 1rem 1rem;
+    background-color: $color-white;
+    display: none;
+    border-left: 1px solid rgba($color: $color-primary, $alpha: .1);
+
+    @include respond(tab-port) {
+      position: static;
+      padding-left: 6rem;
+      border-left: none;
+      background-color: transparent;
+    }
+  }
+
+  &__3-link {
+    display: block;
+    padding: 0.5rem 2rem;
+    font-size: $nav2-size;
+    line-height: 3rem;
+    color: $nav2-color;
+    white-space: nowrap;
+
+    @include respond(tab-port) {
+      color: $color-white;
+      line-height: 5rem;
+    }
+
+    &:hover {
+      color: $nav2-color-active;
+      font-weight: 600;
+      background: $nav2-bg-active;
+    }
   }
 }
