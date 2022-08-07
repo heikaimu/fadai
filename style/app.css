@@ -2418,6 +2418,10 @@ h1, h2, h3, h4 {
   display: block;
   width: 100%;
 }
+.section-partner .swiper-button-next,
+.section-partner .swiper-button-prev {
+  color: #CF000E;
+}
 
 .section-consult {
   padding: 5rem 0;
@@ -2585,6 +2589,66 @@ h1, h2, h3, h4 {
   .section-recommend-lawyer__list > .item {
     width: calc((1 / 1) * 100%);
   }
+}
+
+.section-website {
+  padding: 7rem 0;
+}
+
+.website {
+  border-bottom: 1px dashed #E5E5E5;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+.website__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #CF000E;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+.website__title::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 1.6rem;
+  background-color: #CF000E;
+  margin-right: 0.5rem;
+}
+.website__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-2rem / 2);
+}
+.website__list > .item {
+  list-style: none;
+  padding: calc(2rem / 2);
+  width: calc((1 / 6) * 100%);
+}
+@media only screen and (max-width: 75em) {
+  .website__list > .item {
+    width: calc((1 / 4) * 100%);
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .website__list > .item {
+    width: calc((1 / 2) * 100%);
+  }
+}
+.website__list a {
+  display: block;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  color: #2f2f2f;
+  border: 1px solid #E5E5E5;
+  text-align: center;
+  transition: all .3s ease-in-out;
+}
+.website__list a:hover {
+  border: 1px solid #CF000E;
+  color: #CF000E;
 }
 
 .professional-side-nav__title {

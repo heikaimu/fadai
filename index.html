@@ -648,26 +648,53 @@
         <span class="heading-primary--sub">我们的目标是提供高质量的法律服务</span>
       </h1>
 
-      <ul class="section-partner__list">
-        <li class="item">
-          <img src="./images/partner-1.png" alt="">
-        </li>
-        <li class="item">
-          <img src="./images/partner-2.png" alt="">
-        </li>
-        <li class="item">
-          <img src="./images/partner-3.png" alt="">
-        </li>
-        <li class="item">
-          <img src="./images/partner-4.png" alt="">
-        </li>
-        <li class="item">
-          <img src="./images/partner-5.png" alt="">
-        </li>
-        <li class="item">
-          <img src="./images/partner-6.png" alt="">
-        </li>
-      </ul>
+
+      <!-- Swiper -->
+      <div class="home-swiper">
+        <div class="swiper" id="websitSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/partner-1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-4.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-5.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-6.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-4.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-5.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/partner-6.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next" id="websiteNext"></div>
+          <div class="swiper-button-prev" id="websitePrev"></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -913,6 +940,36 @@
 
       });
     }
+
+    const websitSwiper = new Swiper('#websitSwiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 20,
+      breakpoints: {
+        600: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        1280: {
+          slidesPerView: 6,
+          slidesPerGroup: 6,
+        },
+      },
+      pagination: {
+        el: '#websitPagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '#websiteNext',
+        prevEl: '#websitePrev',
+      },
+    });
   </script>
 </body>
 

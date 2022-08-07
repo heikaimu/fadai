@@ -107,6 +107,7 @@
 
   &__list {
     @include gridList(2rem, 7, 5, 3);
+
     &--more7 {
       @include gridList(2rem, 5, 5, 3);
       justify-content: center;
@@ -277,6 +278,12 @@
     display: block;
     width: 100%;
   }
+
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $color-primary;
+  }
 }
 
 .section-consult {
@@ -394,5 +401,53 @@
 .section-recommend-lawyer {
   &__list {
     @include gridList(1.6rem, 3, 2, 1);
+  }
+}
+
+.section-website {
+  padding: 7rem 0;
+}
+
+.website {
+  border-bottom: 1px dashed $color-border;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $color-primary;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 1.6rem;
+      background-color: $color-primary;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__list {
+    @include gridList(2rem, 6, 4, 2);
+
+    a {
+      display: block;
+      padding: 1rem 1rem;
+      border-radius: 4px;
+      font-size: 1.6rem;
+      color: $color-title;
+      border: 1px solid $color-border;
+      text-align: center;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+      }
+    }
   }
 }
