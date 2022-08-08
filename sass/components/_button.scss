@@ -4,6 +4,7 @@
 
   @include respond(tab-port) {
     display: block;
+    border: none;
   }
 
   &__phone {
@@ -19,6 +20,8 @@
       justify-content: center;
       align-items: center;
       padding: 0;
+      border: 1px solid $color-primary;
+      margin-bottom: 2rem;
     }
 
     &::before {

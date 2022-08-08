@@ -107,7 +107,7 @@
 
   article {
     p {
-      margin: 2rem 0;
+      margin: 4px 0;
       font-size: 1.6rem;
       color: $color-content;
       line-height: 2.8rem;
@@ -133,13 +133,16 @@
   }
 
   &__nex-prev {
+    padding-right: 2rem;
+
     @include respond(tab-port) {
       margin-bottom: 2rem;
+      padding-right: 0;
     }
 
     a {
-      @include linkHover;
-      display: block;
+      // @include linkHover;
+      @include omits(1);
       font-size: 1.4rem;
       color: #6A6A6A;
       line-height: 2;
@@ -149,6 +152,7 @@
 
   &__back {
     @include btnHover;
+    flex: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,10 +261,12 @@
 
   &__cover {
     flex: none;
+
     img {
       display: block;
       width: 39rem;
       height: 56rem;
+
       @include respond(tab-port) {
         width: 100%;
         height: auto;
@@ -270,6 +276,7 @@
 
   &__info {
     padding-left: 4.5rem;
+
     @include respond(tab-port) {
       padding-left: 0;
       padding-top: 3rem;
@@ -278,6 +285,7 @@
 
   &__item {
     margin-bottom: 2.5rem;
+
     h3 {
       font-size: 2rem;
       color: $color-title;
@@ -301,6 +309,18 @@
     p {
       font-size: 1.6rem;
       color: $color-content;
+
+      span:not(:last-child) {
+        display: inline-block;
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          border-left: 1px solid currentColor;
+          margin: 0 8px;
+        }
+      }
     }
 
     a {
