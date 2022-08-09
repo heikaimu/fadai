@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-07-22 17:55:46
+ * @LastEditTime: 2022-08-09 10:20:33
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +31,37 @@
 </head>
 
 <body id="app">
-  
+
   <div class="inner-banner">
-    <img src="./images/banner.png" alt="">
-    <div class="inner-banner__info">
-      <h2>了解行情新闻，学法知法守法！</h2>
+    <div class="swiper" id="innerBanner">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="inner-banner__item">
+            <img src="./images/banner.png" alt="">
+            <div class="inner-banner__info">
+              <h2>了解行情新闻，学法知法守法！</h2>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner-banner__item">
+            <img src="./images/banner.png" alt="">
+            <div class="inner-banner__info">
+              <h2>了解行情新闻，学法知法守法！</h2>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="inner-banner__item">
+            <img src="./images/banner.png" alt="">
+            <div class="inner-banner__info">
+              <h2>了解行情新闻，学法知法守法！</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination" id="innerBannerPagination"></div>
     </div>
   </div>
 
@@ -230,6 +256,23 @@
   <script src="./js/jquery.extends.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/theme.js"></script>
+
+  <script>
+    var mySwiper = new Swiper('#innerBanner', {
+      loop: true,
+      speed: 2000,
+      autoplay: {
+        delay: 5000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+      // 如果需要分页器
+      pagination: {
+        el: '#innerBannerPagination',
+        clickable: true
+      }
+    })  
+  </script>
 </body>
 
 </html>

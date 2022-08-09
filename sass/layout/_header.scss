@@ -38,17 +38,17 @@
     font-family: fontHeavy;
   }
 
-  &__wx-content {
-    @include respond(tab-port) {
-      position: fixed;
-      z-index: 9999;
-      left: 0 !important;
-      right: 0 !important;
-      top: auto !important;
-      bottom: 6.5rem !important;
-      transform: translate3d(0, 0, 0) !important;
-    }
-  }
+  // &__wx-content {
+  //   @include respond(tab-port) {
+  //     position: fixed;
+  //     z-index: 9999;
+  //     left: 0 !important;
+  //     right: 0 !important;
+  //     top: auto !important;
+  //     bottom: 6.5rem !important;
+  //     transform: translate3d(0, 0, 0) !important;
+  //   }
+  // }
 
   &__button-wrapper {
     display: flex;
@@ -88,6 +88,10 @@
 
     &:hover {
       color: $color-primary;
+
+      @include respond(tab-port) {
+        color: $color-white;
+      }
     }
 
     @include respond(tab-port) {

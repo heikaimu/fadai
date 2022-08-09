@@ -177,6 +177,28 @@ h1, h2, h3, h4 {
   }
 }
 
+.only-mobile {
+  position: fixed;
+  left: -100000px;
+}
+@media only screen and (max-width: 56.25em) {
+  .only-mobile {
+    position: relative;
+    left: auto;
+  }
+}
+
+.only-pc {
+  position: relative;
+  left: auto;
+}
+@media only screen and (max-width: 56.25em) {
+  .only-pc {
+    position: fixed;
+    left: -100000px;
+  }
+}
+
 .inner-page {
   display: flex;
 }
@@ -1145,14 +1167,14 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-.inner-banner {
+.inner-banner__item {
   height: 45rem;
   display: flex;
   align-items: center;
   text-align: center;
   position: relative;
 }
-.inner-banner img {
+.inner-banner__item img {
   display: block;
   width: 100%;
   height: 100%;
@@ -1166,23 +1188,31 @@ h1, h2, h3, h4 {
   max-width: 120rem;
   color: #ffffff;
 }
-.inner-banner h2 {
+.inner-banner__info h2 {
   font-size: 4.8rem;
 }
 @media only screen and (max-width: 56.25em) {
-  .inner-banner h2 {
+  .inner-banner__info h2 {
     font-size: 2.8rem;
   }
 }
-.inner-banner h3 {
+.inner-banner__info h3 {
   font-size: 3.8rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 @media only screen and (max-width: 56.25em) {
-  .inner-banner h3 {
+  .inner-banner__info h3 {
     font-size: 1.6rem;
   }
+}
+.inner-banner .swiper-pagination .swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 1;
+}
+.inner-banner .swiper-pagination .swiper-pagination-bullet-active {
+  background: #CF000E;
+  opacity: 1;
 }
 
 .breadcrumb {
@@ -1439,6 +1469,11 @@ h1, h2, h3, h4 {
   z-index: 999;
   transform: translate3d(-50%, 110%, 0);
 }
+@media only screen and (max-width: 56.25em) {
+  .popover__content {
+    display: none;
+  }
+}
 
 .container {
   max-width: 120rem;
@@ -1610,17 +1645,6 @@ h1, h2, h3, h4 {
   color: #2f2f2f;
   font-family: fontHeavy;
 }
-@media only screen and (max-width: 56.25em) {
-  .header-top__wx-content {
-    position: fixed;
-    z-index: 9999;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: 6.5rem !important;
-    transform: translate3d(0, 0, 0) !important;
-  }
-}
 .header-top__button-wrapper {
   display: flex;
 }
@@ -1659,6 +1683,11 @@ h1, h2, h3, h4 {
 }
 .header-top__button:hover {
   color: #CF000E;
+}
+@media only screen and (max-width: 56.25em) {
+  .header-top__button:hover {
+    color: #ffffff;
+  }
 }
 @media only screen and (max-width: 56.25em) {
   .header-top__button {

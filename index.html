@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-08-08 17:06:37
+ * @LastEditTime: 2022-08-09 10:30:15
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -54,12 +54,12 @@
 
               <div class="popover">
                 <div class="popover__title">
-                  <p class="header-top__button">
+                  <p class="header-top__button clipboard" data-clipboard-text="L12312321">
                     <span class="header-top__button-icon header-top__button-icon--two"></span>
                     微信咨询
                   </p>
                 </div>
-                <div class="popover__content header-top__wx-content clipboard" data-clipboard-text="L12312321">
+                <div class="popover__content header-top__wx-content">
                   <img class="qr-code" src="./images/qr_code.png" alt="">
                 </div>
               </div>
@@ -333,7 +333,8 @@
 
       <div class="u-center-text u-margin-top-big">
         <div class="consult-button">
-          <a href="tel:13254622315" class="consult-button__phone">咨询热线：133-5207-1690</a>
+          <a href="javascript:void()" class="consult-button__phone only-pc">咨询热线：133-5207-1690</a>
+          <a href="tel:13254622315" class="consult-button__phone only-mobile">咨询热线：133-5207-1690</a>
           <a href="" class="consult-button__online"><span class="iconfont kaihuzixun"></span> 在线咨询更多业务</a>
         </div>
       </div>
@@ -633,7 +634,8 @@
 
       <div class="u-center-text u-margin-top-big">
         <div class="consult-button">
-          <a href="tel:13254622315" class="consult-button__phone">咨询热线：133-5207-1690</a>
+          <a href="javascript:void()" class="consult-button__phone only-pc">咨询热线：133-5207-1690</a>
+          <a href="tel:13254622315" class="consult-button__phone only-mobile">咨询热线：133-5207-1690</a>
           <a href="" class="consult-button__online"><span class="iconfont kaihuzixun"></span> 在线咨询更多业务</a>
         </div>
       </div>
@@ -690,8 +692,7 @@
               <img src="./images/partner-6.png" alt="">
             </div>
           </div>
-          <div class="swiper-button-next" id="websiteNext"></div>
-          <div class="swiper-button-prev" id="websitePrev"></div>
+          <div class="swiper-pagination" id="websitePagination"></div>
         </div>
       </div>
 
@@ -840,10 +841,13 @@
       $(".section-problem__answer").eq(index).show().siblings().hide();
     }
 
-    $('.popover').popover({
-      title: '.popover__title',
-      content: '.popover__content'
-    });
+    if (!isMobile()) {
+      $('.popover').popover({
+        title: '.popover__title',
+        content: '.popover__content',
+        trigger: 'hover'
+      });
+    }
 
     $('[data-hamburg]').click(function () {
       $('[data-nav]').addClass('active');
@@ -943,8 +947,9 @@
 
     const websitSwiper = new Swiper('#websitSwiper', {
       loop: true,
+      speed: 3000,
       autoplay: {
-        delay: 3000,
+        delay: 5000,
         stopOnLastSlide: false,
         disableOnInteraction: true,
       },
@@ -962,13 +967,9 @@
         },
       },
       pagination: {
-        el: '#websitPagination',
+        el: '#websitePagination',
         clickable: true,
-      },
-      navigation: {
-        nextEl: '#websiteNext',
-        prevEl: '#websitePrev',
-      },
+      }
     });
   </script>
 </body>

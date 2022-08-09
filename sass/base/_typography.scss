@@ -96,6 +96,28 @@ h1, h2, h3, h4 {
   }
 }
 
+// 移动端出现，PC隐藏
+.only-mobile {
+  position: fixed;
+  left: -100000px;
+
+  @include respond(tab-port) {
+    position: relative;
+    left: auto;
+  }
+}
+
+// PC隐藏，移动端出现
+.only-pc {
+  position: relative;
+  left: auto;
+
+  @include respond(tab-port) {
+    position: fixed;
+    left: -100000px;
+  }
+}
+
 .inner-page {
   display: flex;
 

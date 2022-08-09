@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-04-08 17:12:42
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-08-05 17:50:24
+ * @LastEditTime: 2022-08-09 10:30:34
  * @FilePath: /fadai-lawyer/js/theme.js
  */
 
@@ -198,4 +198,12 @@ function wxShow() {
   }, function () {
     $qr.remove();
   })
+}
+
+function isMobile() {
+  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    return true;
+  } else {
+    return false;
+  }
 }

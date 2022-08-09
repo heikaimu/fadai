@@ -15,5 +15,9 @@
     bottom: 0;
     z-index: 999;
     transform: translate3d(-50%, 110%, 0);
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 }
