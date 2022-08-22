@@ -321,9 +321,8 @@
     padding: 1rem 0;
     border-radius: 0 0 1rem 1rem;
     background-color: $nav2-wrapper;
-    box-shadow: 0 5px 7px $color-title;
     display: none;
-    top: 9rem;
+    top: 6rem;
 
     @include respond(tab-port) {
       position: static;
