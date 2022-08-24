@@ -255,6 +255,10 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
 }
+.lawyer-heading--vertical {
+  flex-direction: column;
+  justify-content: center;
+}
 .lawyer-heading--main {
   display: inline-block;
   font-size: 3.2rem;

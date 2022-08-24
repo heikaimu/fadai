@@ -95,7 +95,7 @@
                   <a href="./" class="web-nav__1-link" data-nav-lv1-text>师资力量</a>
                 </li>
                 <li class="web-nav__1-item" data-nav-lv1>
-                  <a href="./single_page.html" class="web-nav__1-link web-nav__1-link--arrow" data-nav-lv1-text>人才培养</a>
+                  <a href="./single_page.html" class="web-nav__1-link" data-nav-lv1-text>人才培养</a>
                   <span class="web-nav__1-open iconfont icon-down" data-nav-lv2-open></span>
                   <ul class="web-nav__2-list" data-nav-lv2-wrapper>
                     <li class="web-nav__2-item" data-nav-lv2>
@@ -194,7 +194,7 @@
             <p class="lawyer-honor__text">天津市滨海新区公益普法单位</p>
             <p class="lawyer-honor__text">天津市群众满意服务窗口示范点</p>
             <p class="lawyer-honor__text">天津市滨海新区劳务市场法律顾问单位等</p>
-            
+
           </div>
         </div>
       </div>
@@ -843,11 +843,12 @@
     }
 
     if (!isMobile()) {
-      $('.popover').popover({
-        title: '.popover__title',
-        content: '.popover__content',
-        trigger: 'hover'
-      });
+      $(".popover__content").hide();
+      $(".popover__title").hover(function () {
+        $(".popover__content").slideDown();
+      }, function () {
+        $(".popover__content").slideUp();
+      })
     }
 
     $('[data-hamburg]').click(function () {
