@@ -1465,8 +1465,9 @@ h1, h2, h3, h4 {
 }
 .popover__content {
   position: absolute;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #cccccc;
   border-radius: 4px;
   left: 50%;
   bottom: 0;
