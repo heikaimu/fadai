@@ -1,10 +1,10 @@
 .professional-side-nav {
   &__title {
-    font-size: 3rem;
+    font-size: 1.8rem;
     color: $color-white;
-    padding-left: 5rem;
-    line-height: 12rem;
+    line-height: 7.5rem;
     background-color: $color-primary;
+    text-align: center;
   }
 
   &__list {
@@ -79,7 +79,7 @@
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 2rem;
     color: $color-title;
     margin-bottom: 2rem;
     text-align: center;
@@ -90,7 +90,7 @@
   }
 
   &__tags {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 
     @include respond(tab-port) {
       text-align: center;
@@ -98,7 +98,7 @@
 
     span {
       display: inline-block;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: $color-content;
       margin-right: 3rem;
       font-family: fontHeavy;
@@ -108,7 +108,7 @@
   article {
     p {
       margin: 4px 0;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: $color-content;
       line-height: 2.8rem;
       font-family: fontHeavy;
@@ -118,6 +118,22 @@
       display: block;
       max-width: 100%;
       margin: 2rem auto;
+    }
+  }
+
+  &__share {
+    padding: 3rem 7rem 0 7rem;
+
+    p {
+      font-size: 1.6rem;
+      color: $color-title;
+
+      a {
+        color: #409EFF;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -143,7 +159,7 @@
     a {
       // @include linkHover;
       @include omits(1);
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #6A6A6A;
       line-height: 2;
       font-family: fontHeavy;
@@ -177,8 +193,8 @@
   &__title {
     line-height: 7.2rem;
     background-color: $color-primary;
-    padding-left: 3rem;
-    font-size: 3rem;
+    text-align: center;
+    font-size: 1.8rem;
     color: $color-white;
   }
 
@@ -228,14 +244,14 @@
   }
 
   &__title {
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
     color: $color-title;
   }
 
   article {
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: $color-content;
       text-indent: 2em;
       margin-bottom: 2rem;
@@ -265,7 +281,8 @@
     img {
       display: block;
       width: 39rem;
-      height: 56rem;
+      height: 40.6rem;
+      object-fit: cover;
 
       @include respond(tab-port) {
         width: 100%;
@@ -284,14 +301,14 @@
   }
 
   &__item {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
 
     h3 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: $color-title;
       position: relative;
       padding-left: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 
       &::before {
         content: "";
@@ -307,11 +324,12 @@
     }
 
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: $color-content;
 
       span:not(:last-child) {
         display: inline-block;
+
         &::after {
           content: "";
           display: inline-block;

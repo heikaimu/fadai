@@ -42,7 +42,7 @@
     }
 
     h2 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
   }
@@ -89,9 +89,10 @@
     }
 
     a {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: $color-white;
       margin: 0 4rem;
+      position: relative;
 
       @include respond(tab-port) {
         margin: 0;
@@ -99,6 +100,20 @@
 
       &:hover {
         filter: brightness(.8);
+      }
+
+      &:not(:last-child) {
+        &::after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 1rem;
+          border-right: 1px solid rgba($color: $color-white, $alpha: 0.46);
+          position: absolute;
+          right: -4rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
     }
   }
@@ -108,7 +123,7 @@
     p,
     a {
       display: inline-block;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: $color-white;
       opacity: .6;
       margin-right: 1rem;

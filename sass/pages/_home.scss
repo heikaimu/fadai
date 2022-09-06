@@ -62,33 +62,49 @@
 
 
 .section-introduce {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background: #CF000E url(../images/bg-2.png) no-repeat center center / cover;
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: $color-white;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   &__text {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: $color-white;
     margin-bottom: 1rem;
+    line-height: 1.4;
+    padding-right: 5rem;
+    position: relative;
+    letter-spacing: 2px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 10rem;
+      border-right: 1px solid rgba($color: $color-white, $alpha: 0.5);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
 }
 
 .lawyer-honor {
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: $color-white;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   &__text {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: $color-white;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
 
     &::before {
       @include iconfont;
@@ -102,12 +118,13 @@
 }
 
 .section-business {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background: #F1F1F1;
 
   &__list {
     @include gridList(2rem, 7, 5, 3);
     justify-content: center;
+
     .item {
       flex: 1;
     }
@@ -115,6 +132,7 @@
     &--more7 {
       @include gridList(2rem, 5, 5, 3);
       justify-content: center;
+
       .item {
         flex: none;
       }
@@ -123,7 +141,7 @@
 }
 
 .section-team {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background: #FFFFFB;
 
   &__list {
@@ -140,7 +158,7 @@
 }
 
 .section-case {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 
   &__list {
     @include gridList(6rem, 3, 2, 1);
@@ -148,7 +166,7 @@
 }
 
 .section-service {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background: #feeab2 url(../images/bg-1.png) no-repeat center center / cover;
 
   &__step {
@@ -183,7 +201,7 @@
 }
 
 .section-problem {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 
   &__main {
     border-top: 4px solid $color-primary;
@@ -251,7 +269,7 @@
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.4rem;
       color: $color-title;
       margin-bottom: 1rem;
 
@@ -267,14 +285,14 @@
     }
 
     p {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: $color-title;
     }
   }
 }
 
 .section-partner {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 
   &__list {
     @include gridList(2rem, 6, 3, 2);
@@ -312,7 +330,7 @@
 
     &--main {
       display: block;
-      font-size: 3rem;
+      font-size: 2rem;
       color: $color-title;
 
       @include respond(tab-port) {
@@ -324,7 +342,7 @@
       @include textLine(#E5E5E5);
       display: flex;
       align-items: center;
-      font-size: 2.4rem;
+      font-size: 1.6rem;
       color: $color-primary;
 
       @include respond(tab-port) {
@@ -346,7 +364,7 @@
 }
 
 .section-lawyer-team {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 
   &__list {
     @include gridList(1.6rem, 3, 2, 1);
@@ -355,7 +373,7 @@
 
 
 .section-team-power {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background: url(../images/bg-4.png) no-repeat center center / cover;
 
   &__list {
@@ -364,7 +382,7 @@
 }
 
 .section-service-rule {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
   background-color: #FFFFFB;
 
   &__list {
@@ -387,7 +405,7 @@
 
 
 .section-classic-case {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 
   &__list {
     padding: 2rem;
@@ -412,7 +430,7 @@
 }
 
 .section-website {
-  padding: 7rem 0;
+  padding: 4.5rem 0;
 }
 
 .website {

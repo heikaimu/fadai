@@ -15,10 +15,18 @@
     background-color: $color-white;
     transition: all .3s ease-in-out;
 
-    svg {
+    img {
       width: 4rem;
       height: 4rem;
       fill: $color-primary;
+
+      &.static {
+        display: block;
+      }
+
+      &.hover {
+        display: none;
+      }
     }
   }
 
@@ -39,8 +47,16 @@
   &:hover &__icon {
     background-color: $color-primary;
 
-    svg {
-      fill: $color-white;
+
+    img {
+
+      &.static {
+        display: none;
+      }
+
+      &.hover {
+        display: block;
+      }
     }
   }
 }
@@ -84,10 +100,18 @@
     background-color: #F1F1F1;
     transition: all .3s ease-in-out;
 
-    svg {
+    img {
       width: 2rem;
       height: 2rem;
       fill: $color-primary;
+
+      &.static {
+        display: block;
+      }
+
+      &.hover {
+        display: none;
+      }
     }
   }
 
@@ -107,6 +131,20 @@
 
     &::after {
       color: $color-primary;
+    }
+  }
+
+  &.active &__icon {
+
+    img {
+
+      &.static {
+        display: none;
+      }
+
+      &.hover {
+        display: block;
+      }
     }
   }
 
@@ -233,6 +271,7 @@
 
   &:hover &__info {
     background: linear-gradient(to top, $color-primary, $color-primary);
+
     @include respond(tab-port) {
       background: transparent;
     }
@@ -244,6 +283,7 @@
 
   &:hover &__desc {
     display: block;
+
     @include respond(tab-port) {
       display: none;
     }
@@ -271,7 +311,7 @@
 
   &__image {
     width: 100%;
-    height: 56rem;
+    height: 36rem;
 
     img {
       width: 100%;
@@ -286,7 +326,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 3rem;
+    padding: 2rem;
     color: $color-white;
     background: linear-gradient(to top, #000000, transparent);
     transition: all .3s ease-in-out;
@@ -319,7 +359,7 @@
 
   &__name {
     display: inline-block;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
   }
 
   &__level {
@@ -327,18 +367,18 @@
     padding: 0 .8rem;
     background-color: $color-primary;
     line-height: 2.2rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: $color-white;
     margin-left: 1rem;
     transition: all .3s ease-in-out;
   }
 
   &__roles {
-    padding-top: 1.2rem;
+    padding-top: 0.6rem;
 
     p {
-      font-size: 1.6rem;
-      line-height: 2;
+      font-size: 1.4rem;
+      line-height: 1.6;
     }
   }
 
@@ -346,6 +386,7 @@
     padding-top: 1.2rem;
     font-size: 1.4rem;
     transition: all .3s ease-in-out;
+
     @include respond(tab-port) {
       display: none;
     }
@@ -400,6 +441,7 @@
   padding-top: 6rem;
   position: relative;
   margin-top: 4rem;
+
   &__cover {
     width: 9rem;
     height: 9rem;
@@ -409,6 +451,7 @@
     left: 50%;
     top: 0;
     transform: translate3d(-50%, -50%, 0);
+
     img {
       display: block;
       width: 100%;
@@ -423,21 +466,21 @@
   }
 
   &__medium {
-    padding-bottom: 2.5rem
+    padding-bottom: 2rem
   }
 
   &__skill-title {
     flex: 1;
     display: flex;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     @include textLine($color-content);
     margin-bottom: 1rem;
   }
 
   &__skills {
     @include omits(2);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: $color-content;
   }
 
@@ -547,6 +590,7 @@
     height: 18rem;
     flex: none;
     overflow: hidden;
+
     @include respond(tab-port) {
       width: 100%;
       height: 25rem;
@@ -577,20 +621,20 @@
 
   &__title {
     @include omits(2);
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     color: $color-title;
     line-height: 1.4;
     margin-bottom: 1.2rem;
     transition: all .3s ease-in-out;
   }
-  
+
   &--lawyer &__desc {
     @include omits(3);
   }
 
   &__desc {
     @include omits(2);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: $color-content;
     transition: all .3s ease-in-out;
     font-family: fontHeavy;
@@ -667,7 +711,7 @@
 }
 
 .rule-card {
-  padding: 6rem 2rem 6rem 7.8rem;
+  padding: 3.5rem 2rem 3.5rem 7.8rem;
   border: 1px solid #ECECEC;
   background-color: $color-white;
   display: flex;
@@ -687,11 +731,90 @@
   }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   &__desc {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
+  }
+}
+
+.new-lawyer-card {
+  display: flex;
+  &__left {
+    flex: none;
+    position: relative;
+  }
+
+  .counsel-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-primary;
+    color: $color-white;
+    border: 1px solid $color-primary;
+  }
+
+  &__image {
+    position: relative;
+    img {
+      display: block;
+      width: 18rem;
+      height: 24.5rem;
+    }
+  }
+
+  &__right {
+    padding-left: 1.5rem;
+  }
+
+  &__main-info {
+
+  }
+
+  &__heading {
+
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    color: $color-title;
+    margin-bottom: 0.6rem;
+  }
+
+  &__level {
+    display: flex;
+
+    .tag {
+      padding: 0 2rem;
+      height: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #FFD86B;
+      border-radius: 0px 0px 0px 0px;
+      opacity: 1;
+      font-size: 1.2rem;
+      color: $color-primary;
+    }
+    margin-bottom: 0.8rem;
+  }
+
+  &__roles {
+    font-size: 1.4rem;
+    color: $color-title;
+    margin-bottom: 0.8rem;
+  }
+
+  &__desc {
+    @include omits(6);
+    font-size: 1.2rem;
+    color: $color-content;
+
+    @include respond(tab-port) {
+      @include omits(5);
+    }
   }
 }
