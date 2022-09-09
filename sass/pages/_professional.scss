@@ -11,10 +11,25 @@
     padding: 2.8rem 1.8rem;
     margin-top: 1.6rem;
     border: 1px solid $color-border;
+
+    @include respond(tab-port){
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      border: none;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
   }
 
   &__item {
     list-style: none;
+
+    @include respond(tab-port){
+      width: 33.33%;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
   }
 }
 
@@ -23,8 +38,15 @@
   border: 1px solid #ECECEC;
   border-bottom: none;
 
+  @include respond(tab-port) {
+    padding: 0;
+    border: none;
+    border-top: 1px solid $color-border;
+    padding-top: 2rem;
+  }
+
   &__list {
-    @include gridList(1.6rem, 5, 3, 2);
+    @include gridList(1.6rem, 5, 3, 3);
   }
 
   a {
@@ -36,25 +58,14 @@
     border: 1px solid #f1f1f1;
     color: $color-title;
 
+    @include respond(tab-port) {
+      line-height: 4rem;
+    }
+
     &:hover,
     &.active {
       border: 1px solid $color-primary;
       color: $color-primary;
-
-      @include respond(tab-port) {
-        border: none;
-        border-left: 3px solid $color-primary;
-        background-color: $color-secondary;
-        color: $color-primary;
-      }
-    }
-
-    @include respond(tab-port) {
-      border-radius: 2px;
-      background-color: #F7F7F7;
-      border: none;
-      font-size: 1.6rem;
-      font-weight: 600;
     }
   }
 }

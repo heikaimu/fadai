@@ -71,6 +71,11 @@
   align-items: center;
   transition: all .3s ease-in-out;
 
+  @include respond(tab-port) {
+    background-color: #F7F7F7;
+    height: 4rem;
+  }
+
   &--no-icon {
     border-left: 2px solid transparent;
   }
@@ -89,6 +94,10 @@
     color: currentColor;
     color: $color-title;
     font-size: 1.4rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__icon {
