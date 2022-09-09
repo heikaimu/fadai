@@ -15,6 +15,7 @@ $(function () {
   mobileSearch();
   mainNavToggle();
   wxShow();
+  // cardOmits();
 });
 
 // select
@@ -206,4 +207,11 @@ function isMobile() {
   } else {
     return false;
   }
+}
+
+function cardOmits() {
+  $(".new-lawyer-card").each(function() {
+    const l = $(this).find('.new-lawyer-card__roles p').length
+    $(this).find('.new-lawyer-card__desc').addClass(`omits${l}`)
+  })
 }

@@ -11,14 +11,15 @@
     align-items: center;
     width: 8.5rem;
     height: 8.5rem;
+    overflow: hidden;
     border-radius: 50%;
     background-color: $color-white;
     transition: all .3s ease-in-out;
 
     img {
-      width: 4rem;
-      height: 4rem;
-      fill: $color-primary;
+      display: block;
+      width: 100%;
+      height: 100%;
 
       &.static {
         display: block;
@@ -96,14 +97,15 @@
     align-items: center;
     width: 4rem;
     height: 4rem;
+    overflow: hidden;
     border-radius: 50%;
     background-color: #F1F1F1;
     transition: all .3s ease-in-out;
 
     img {
-      width: 2rem;
-      height: 2rem;
-      fill: $color-primary;
+      display: block;
+      width: 100%;
+      height: 100%;
 
       &.static {
         display: block;
@@ -763,15 +765,22 @@
       display: block;
       width: 18rem;
       height: 24.5rem;
+      object-fit: cover;
     }
   }
 
   &__right {
     padding-left: 1.5rem;
+    position: relative;
+    height: 24.5rem;
+  }
+
+  &__link {
+    @include absolute;
   }
 
   &__main-info {
-
+    height: 100%;
   }
 
   &__heading {
@@ -781,15 +790,16 @@
   &__name {
     font-size: 1.8rem;
     color: $color-title;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1rem;
   }
 
   &__level {
     display: flex;
+    flex: none;
 
     .tag {
       padding: 0 2rem;
-      height: 2.2rem;
+      height: 2.17rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -799,22 +809,44 @@
       font-size: 1.2rem;
       color: $color-primary;
     }
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   &__roles {
     font-size: 1.4rem;
     color: $color-title;
     margin-bottom: 0.8rem;
+    flex: none;
   }
 
   &__desc {
-    @include omits(6);
     font-size: 1.2rem;
     color: $color-content;
+    flex: 1;
+    overflow: hidden;
+    @include omits(2);
+
+    &.omits1 {
+      @include omits(6);
+    }
+
+    &.omits2 {
+      @include omits(6);
+    }
+
+    &.omits3 {
+      @include omits(4);
+    }
+
+    &.omits4 {
+      @include omits(3);
+    }
+
+    &.omits5 {
+      @include omits(2);
+    }
 
     @include respond(tab-port) {
-      @include omits(5);
     }
   }
 }
