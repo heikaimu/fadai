@@ -95,19 +95,26 @@
     }
 
     @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
       font-size: 1.6rem;
       color: $color-white;
+      line-height: 1;
     }
   }
 
   &__button-icon {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     margin-right: 4px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(-1px);
+    @include respond(tab-port) {
+      width: 3rem;
+      height: 3rem;
+    }
 
     &--one {
       background-image: url(../images/icon-top-1.png);

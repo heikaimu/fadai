@@ -18,15 +18,15 @@
     color: $color-white;
 
     h2 {
-      font-size: 4.8rem;
+      font-size: 3.2rem;
 
       @include respond(tab-port) {
-        font-size: 2.8rem;
+        font-size: 2rem;
       }
     }
 
     h3 {
-      font-size: 3.6rem;
+      font-size: 2rem;
 
       @include respond(tab-port) {
         font-size: 1.6rem;
@@ -62,23 +62,27 @@
 
 
 .section-introduce {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: #CF000E url(../images/bg-2.png) no-repeat center center / cover;
 
   &__title {
     font-size: 1.6rem;
     color: $color-white;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   &__text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: $color-white;
     margin-bottom: 1rem;
     line-height: 1.4;
     padding-right: 5rem;
     position: relative;
     letter-spacing: 2px;
+
+    @include respond(tab-port) {
+      padding-right: 0;
+    }
 
     &::after {
       content: "";
@@ -89,6 +93,10 @@
       position: absolute;
       right: 0;
       top: 0;
+
+      @include respond(tab-port) {
+        display: none;
+      }
     }
   }
 }
@@ -118,11 +126,11 @@
 }
 
 .section-business {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: #F1F1F1;
 
   &__list {
-    @include gridList(2rem, 7, 5, 3);
+    @include gridList(2rem, 7, 5, 4);
     justify-content: center;
 
     .item {
@@ -130,7 +138,7 @@
     }
 
     &--more7 {
-      @include gridList(2rem, 5, 5, 3);
+      @include gridList(2rem, 5, 5, 4);
       justify-content: center;
 
       .item {
@@ -141,7 +149,7 @@
 }
 
 .section-team {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: #FFFFFB;
 
   &__list {
@@ -158,15 +166,15 @@
 }
 
 .section-case {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 
   &__list {
-    @include gridList(6rem, 3, 2, 1);
+    @include gridList(3rem, 3, 2, 1);
   }
 }
 
 .section-service {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: #feeab2 url(../images/bg-1.png) no-repeat center center / cover;
 
   &__step {
@@ -175,39 +183,79 @@
     align-items: center;
 
     @include respond(tab-port) {
-      display: block;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .service-card {
       @include respond(tab-port) {
         margin-bottom: 2rem;
         margin-top: 2rem;
+        width: 33.33%;
+      }
+
+      &--4 {
+        position: relative;
+
+        &::before {
+          content: "";
+          display: none;
+          width: 3.9rem;
+          height: 2.3rem;
+          background: url(../images/icon-arrow.png) no-repeat center center / cover;
+          transform: translateY(-1rem);
+
+          @include respond(tab-port) {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%, -100%);
+          }
+        }
       }
     }
   }
 
   &__arrow {
     display: block;
-    width: 3.9rem;
-    height: 2.3rem;
-    background: url(../images/icon-arrow.png) no-repeat center center / cover;
-    transform: translateY(-1rem);
+    position: relative;
 
-    @include respond(tab-port) {
-      margin: 0 auto;
-      transform: rotate(90deg);
+    &--3 {
+      @include respond(tab-port) {
+        display: none;
+      }
     }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 3.9rem;
+      height: 2.3rem;
+      background: url(../images/icon-arrow.png) no-repeat center center / cover;
+      transform: translateY(-1rem);
+
+      @include respond(tab-port) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -100%);
+      }
+    }
+
+
   }
 }
 
 .section-problem {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 
   &__main {
     border-top: 4px solid $color-primary;
     border-left: 1px solid $color-border;
     border-right: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
+    box-shadow: 0px 4px 4px 0px #F5F5EF;
     position: relative;
 
     @include respond(tab-port) {
@@ -262,7 +310,7 @@
   }
 
   &__answer {
-    padding: 4rem 4rem 4rem 0;
+    padding: 3rem 4rem 4rem 0;
 
     @include respond(tab-port) {
       padding: 1rem;
@@ -289,10 +337,24 @@
       color: $color-title;
     }
   }
+
+  &__mobile {
+    padding: 2rem;
+    border-top: 4px solid $color-primary;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    box-shadow: 0px 4px 4px 0px #F5F5EF;
+    position: relative;
+    .item {
+      list-style: none;
+      border-bottom: 1px solid $color-border;
+    }
+  }
 }
 
 .section-partner {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 
   &__list {
     @include gridList(2rem, 6, 3, 2);
@@ -312,7 +374,7 @@
 }
 
 .section-consult {
-  padding: 5rem 0;
+  padding: 2.4rem 0;
   background: url(../images/bg-3.png) no-repeat center center / cover;
 
   &__content {
@@ -325,12 +387,15 @@
   }
 
   &__heading {
-    max-width: 48rem;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
 
     &--main {
       display: block;
-      font-size: 2rem;
+      font-size: 1.2rem;
       color: $color-title;
 
       @include respond(tab-port) {
@@ -339,10 +404,9 @@
     }
 
     &--sub {
-      @include textLine(#E5E5E5);
       display: flex;
       align-items: center;
-      font-size: 1.6rem;
+      font-size: 2rem;
       color: $color-primary;
 
       @include respond(tab-port) {
@@ -364,7 +428,7 @@
 }
 
 .section-lawyer-team {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 
   &__list {
     @include gridList(1.6rem, 3, 2, 1);
@@ -373,7 +437,7 @@
 
 
 .section-team-power {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: url(../images/bg-4.png) no-repeat center center / cover;
 
   &__list {
@@ -382,7 +446,7 @@
 }
 
 .section-service-rule {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background-color: #FFFFFB;
 
   &__list {
@@ -405,7 +469,7 @@
 
 
 .section-classic-case {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 
   &__list {
     padding: 2rem;
@@ -430,7 +494,7 @@
 }
 
 .section-website {
-  padding: 4.5rem 0;
+  padding: 4rem 0;
 }
 
 .website {

@@ -198,6 +198,34 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin absLeft {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@mixin absRight {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+@mixin absTop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin absBottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 @mixin gridList($gutter: 1rem, $pc: 4, $land: 2, $port: 1) {
   display: flex;
   flex-wrap: wrap;

@@ -15,7 +15,8 @@ $(function () {
   mobileSearch();
   mainNavToggle();
   wxShow();
-  // cardOmits();
+  qsToggle();
+  cardOmits();
 });
 
 // select
@@ -210,8 +211,25 @@ function isMobile() {
 }
 
 function cardOmits() {
-  $(".new-lawyer-card").each(function() {
+  $(".new-lawyer-card").each(function () {
     const l = $(this).find('.new-lawyer-card__roles p').length
     $(this).find('.new-lawyer-card__desc').addClass(`omits${l}`)
+  })
+}
+
+function qsToggle() {
+  $(".mobile-problem-card").each(function () {
+    const heading = $(this).find(".mobile-problem-card__heading")
+    const content = $(this).find(".mobile-problem-card__content")
+    heading.click(function () {
+      if (heading.hasClass('active')) {
+        heading.removeClass('active')
+        content.hide()
+      } else {
+        heading.addClass('active')
+        content.show()
+      }
+    })
+
   })
 }

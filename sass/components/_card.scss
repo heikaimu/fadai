@@ -362,6 +362,10 @@
   &__name {
     display: inline-block;
     font-size: 1.6rem;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
 
   &__level {
@@ -381,6 +385,10 @@
     p {
       font-size: 1.4rem;
       line-height: 1.6;
+
+      @include respond(tab-port) {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -407,6 +415,7 @@
 
     .counsel-button {
       flex: 1;
+      font-weight: 600;
     }
   }
 
@@ -484,6 +493,11 @@
     @include omits(2);
     font-size: 1.2rem;
     color: $color-content;
+
+    @include respond(tab-port) {
+      padding: 0 4rem;
+      text-align: center;
+    }
   }
 
   &__bottom {
@@ -501,7 +515,7 @@
   border-bottom: 1px solid $color-border;
 
   &__header {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -509,8 +523,10 @@
   }
 
   &__title {
+    padding: 0 5rem 0 1rem;
     font-size: 1.8rem;
-    color: $color-primary;
+    color: $color-white;
+    background: linear-gradient(89deg, #E4393C 0%, rgba(228, 57, 60, 0.93) 49%, rgba(228, 57, 60, 0) 100%);
   }
 
   &__more {
@@ -647,6 +663,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1.5rem;
+    flex-direction: row-reverse;
   }
 
   &__more {
@@ -719,6 +736,10 @@
   display: flex;
   align-items: center;
 
+  @include respond(tab-port) {
+    padding: 3.5rem 4rem;
+  }
+
   &__icon {
     img {
       display: block;
@@ -744,6 +765,7 @@
 
 .new-lawyer-card {
   display: flex;
+
   &__left {
     flex: none;
     position: relative;
@@ -761,6 +783,7 @@
 
   &__image {
     position: relative;
+
     img {
       display: block;
       width: 18rem;
@@ -784,21 +807,27 @@
   }
 
   &__heading {
-
+    display: flex;
+    align-items: center;
   }
 
   &__name {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: $color-title;
     margin-bottom: 1rem;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
 
   &__level {
     display: flex;
     flex: none;
+    padding-left: 0.5rem;
 
     .tag {
-      padding: 0 2rem;
+      padding: 0 0.5rem;
       height: 2.17rem;
       display: flex;
       justify-content: center;
@@ -809,6 +838,7 @@
       font-size: 1.2rem;
       color: $color-primary;
     }
+
     margin-bottom: 1rem;
   }
 
@@ -846,7 +876,67 @@
       @include omits(2);
     }
 
-    @include respond(tab-port) {
+    @include respond(tab-port) {}
+  }
+}
+
+
+.mobile-problem-card {
+  &__heading {
+    position: relative;
+
+    &.active {
+      background-color: $color-secondary;
+      padding-left: 0.5rem;
+
+      span {
+        &::after {
+          content: "\e7ed";
+        }
+      }
+    }
+
+    h2 {
+      @include omits(1);
+      font-size: 1.6rem;
+      line-height: 4rem;
+      color: $color-title;
+      padding-right: 6rem;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        background: url(../images/icon-problem.png) no-repeat center center / contain;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    span {
+      @include absRight;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4rem;
+      width: 5rem;
+
+      &::after {
+        @include iconfont;
+        content: "\e7ee";
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1rem 0 2rem 0;
+    display: none;
+
+    p {
+      font-size: 1.4rem;
+      color: $color-content;
     }
   }
 }
