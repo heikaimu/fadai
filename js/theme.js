@@ -104,14 +104,19 @@ function mainNavToggle() {
         const navOne = $(this);
         const navTwoBox = $(this).find("[data-nav-lv2-wrapper]");
         if (navTwoBox.length) {
+          const hasActive = navOne.find("[data-nav-lv1-text]").hasClass("active")
           navOne.hover(
             function () {
               navTwoBox.show();
-              navOne.find("[data-nav-lv1-text]").addClass("active");
+              if (!hasActive) {
+                navOne.find("[data-nav-lv1-text]").addClass("active");
+              }
             },
             function () {
               navTwoBox.hide();
-              navOne.find("[data-nav-lv1-text]").removeClass("active");
+              if (!hasActive) {
+                navOne.find("[data-nav-lv1-text]").removeClass("active");
+              }
             }
           );
 
@@ -233,3 +238,4 @@ function qsToggle() {
 
   })
 }
+

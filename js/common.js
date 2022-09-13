@@ -17,12 +17,34 @@ function layer(title, message, callbackFn) {
 
 // 页面刷新回到顶部，回到顶部按钮
 function backTop() {
-  $('body,html').animate({
-    scrollTop: 0
-  }, 300);
+  const sp = document.getElementById("startPos");
+  if (sp) {
+    sp.scrollIntoView({
+      // 滚动到指定节点
+      block: 'start', // 值有start,center,end，nearest，当前显示在视图区域中间
+      behavior: 'smooth' // 值有auto、instant,smooth，缓动动画（当前是慢速的）
+    });
+  } else {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 300);
 
-  $("#backTopMenu").backTop({
-    offset: 500,
-    duration: 300
-  });
+    $("#backTopMenu").backTop({
+      offset: 500,
+      duration: 300
+    });
+  }
+
+
+}
+
+function startPosScroll() {
+  const sp = document.getElementById("startPos");
+  if (sp) {
+    sp.scrollIntoView({
+      // 滚动到指定节点
+      block: 'start', // 值有start,center,end，nearest，当前显示在视图区域中间
+      behavior: 'smooth' // 值有auto、instant,smooth，缓动动画（当前是慢速的）
+    });
+  }
 }
