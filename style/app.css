@@ -2092,7 +2092,7 @@ h1, h2, h3, h4 {
     line-height: 7rem;
   }
 }
-.web-nav__1-link.active {
+.web-nav__1-link:hover, .web-nav__1-link.active {
   color: #ffffff;
   font-weight: 600;
   background: #CF000E;
@@ -2159,7 +2159,9 @@ h1, h2, h3, h4 {
 }
 @media only screen and (max-width: 56.25em) {
   .web-nav__2-link {
+    color: #2f2f2f;
     line-height: 5rem;
+    text-align: left;
   }
 }
 .web-nav__2-link:hover {

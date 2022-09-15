@@ -19,11 +19,11 @@ function layer(title, message, callbackFn) {
 function backTop() {
   const sp = document.getElementById("startPos");
   if (sp) {
-    sp.scrollIntoView({
-      // 滚动到指定节点
-      block: 'start', // 值有start,center,end，nearest，当前显示在视图区域中间
-      behavior: 'smooth' // 值有auto、instant,smooth，缓动动画（当前是慢速的）
-    });
+    // sp.scrollIntoView({
+    //   // 滚动到指定节点
+    //   block: 'start', // 值有start,center,end，nearest，当前显示在视图区域中间
+    //   behavior: 'smooth' // 值有auto、instant,smooth，缓动动画（当前是慢速的）
+    // });
   } else {
     $('body,html').animate({
       scrollTop: 0

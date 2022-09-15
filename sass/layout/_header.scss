@@ -284,6 +284,7 @@
       line-height: 7rem;
     }
 
+    &:hover,
     &.active {
       color: $nav1-color-active;
       font-weight: 600;
@@ -353,8 +354,9 @@
     text-align: center;
 
     @include respond(tab-port) {
-      // color: $color-white;
+      color: $color-title;
       line-height: 5rem;
+      text-align: left;
     }
 
     &:hover {
