@@ -92,7 +92,7 @@ h1, h2, h3, h4 {
     // animation: moveInRight 1s ease-out;
 
     @include respond(phone) {
-      letter-spacing: .5rem;
+      letter-spacing: 1px;
     }
   }
 }

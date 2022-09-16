@@ -2,7 +2,7 @@
  * @Author: Yaowen Liu
  * @Date: 2022-03-07 09:45:10
  * @LastEditors: Yaowen Liu
- * @LastEditTime: 2022-08-09 10:30:15
+ * @LastEditTime: 2022-09-16 14:20:19
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -47,20 +47,32 @@
           </div>
           <div class="header-top__right">
             <div class="header-top__button-wrapper">
+              <a href="" class="header-top__button only-mobile">
+                <span class="header-top__button-icon header-top__button-icon--four"></span>
+                主页
+              </a>
+              
               <a href="" class="header-top__button">
                 <span class="header-top__button-icon header-top__button-icon--one"></span>
                 电话咨询<strong class="only-pc">：13352071690</strong>
               </a>
 
-              <div class="popover">
-                <div class="popover__title">
-                  <p class="header-top__button clipboard" data-clipboard-text="L12312321">
-                    <span class="header-top__button-icon header-top__button-icon--two"></span>
-                    微信咨询
-                  </p>
-                </div>
-                <div class="popover__content header-top__wx-content">
-                  <img class="qr-code" src="./images/qr_code.png" alt="">
+              <a href="https://apis.map.qq.com/uri/v1/routeplan?type=drive&to=天津市滨海新区河北路宏大公寓底商号1&tocoord=39.030706,117.662810&policy=1&referer=25JBZ-GCRKR-SO6WU-WWD2D-SPHEZ-IRBPD" target="_blank" class="header-top__button only-mobile">
+                <span class="header-top__button-icon header-top__button-icon--five"></span>
+                导航到所
+              </a>
+
+              <div>
+                <div class="popover">
+                  <div class="popover__title">
+                    <p class="header-top__button clipboard" data-clipboard-text="L12312321">
+                      <span class="header-top__button-icon header-top__button-icon--two"></span>
+                      微信咨询
+                    </p>
+                  </div>
+                  <div class="popover__content header-top__wx-content">
+                    <img class="qr-code" src="./images/qr_code.png" alt="">
+                  </div>
                 </div>
               </div>
 
@@ -176,15 +188,15 @@
         <span class="heading-primary--sub">wo men de rongyu</span>
       </h1>
 
-      <div class="row">
-        <div class="col-3-of-5">
+      <div class="section-introduce__wrapper">
+        <div class="left">
           <p class="section-introduce__title">律所介绍：</p>
           <p class="section-introduce__text">
             天津法岱律师事务所，是一家秉承着“以事实维护权益，用真心化解纠纷”的文化核心理念，以“尊崇事实、扬善护正、法如泰山、依法正行”为法律服务宗旨的综合性法律服务机构。
             业务范围涵盖民事、刑事、企业法律顾问三大领域，根据这些领域形成纵向的法律服务模式。根据不同案件类型，组建专业律师团队，由资深律师带队办案，团队专业知识完备。各团队根据自身办案领域定期开展专业知识学习，从而具备一流的办案技巧及团队协作能力。案源中心接受当事人委托后，统一由行政部门分配案件，每周各团队在资深律师的带领下，开展案件研讨会议，以不同角度分析案件案情，全方位、多层次的剖析案件。
           </p>
         </div>
-        <div class="col-2-of-5">
+        <div class="right">
           <div class="lawyer-honor">
             <p class="lawyer-honor__title">律所荣誉：</p>
             <p class="lawyer-honor__text">天津市文明单位</p>
@@ -405,7 +417,9 @@
 
   <div class="section-sign">
     <img class="only-pc" src="./images/sign.png" alt="">
-    <img class="only-mobile" src="./images/sign-mobile.png" alt="">
+    <a href="tel:1231">
+      <img class="only-mobile" src="./images/sign-mobile.png" alt="">
+    </a>
   </div>
 
   <!-- 案例 -->
@@ -1014,7 +1028,7 @@
       const clipboard = new Clipboard('.clipboard');
 
       clipboard.on('success', function (e) {
-        cocoMessage.success(2000, "复制成功", function () {
+        cocoMessage.success(2000, "微信号已复杂，请去微信添加", function () {
           console.log("close");
         });
       });

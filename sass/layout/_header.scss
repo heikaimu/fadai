@@ -9,8 +9,14 @@
     right: 0;
     bottom: 0;
     z-index: 997;
-    background: $color-primary;
+    background: $color-white;
     border-top: 1px solid $color-white;
+  }
+
+  .container {
+    @include respond(tab-port) {
+      padding: 0;
+    }
   }
 
   &__content {
@@ -75,6 +81,9 @@
 
     @include respond(tab-port) {
       margin-left: 0;
+      flex: 1;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -88,17 +97,13 @@
 
     &:hover {
       color: $color-primary;
-
-      @include respond(tab-port) {
-        color: $color-white;
-      }
     }
 
     @include respond(tab-port) {
       flex-direction: column;
       justify-content: center;
       font-size: 1.6rem;
-      color: $color-white;
+      color: $color-primary;
       line-height: 1;
     }
   }
@@ -114,18 +119,39 @@
     @include respond(tab-port) {
       width: 3rem;
       height: 3rem;
+      margin-right: 0;
     }
 
     &--one {
       background-image: url(../images/icon-top-1.png);
+
+      @include respond(tab-port) {
+        background-image: url(../images/red-phone.png);
+      }
     }
 
     &--two {
       background-image: url(../images/icon-top-2.png);
+
+      @include respond(tab-port) {
+        background-image: url(../images/red-wx.png);
+      }
     }
 
     &--three {
       background-image: url(../images/icon-top-3.png);
+
+      @include respond(tab-port) {
+        background-image: url(../images/red-message.png);
+      }
+    }
+
+    &--four {
+      background-image: url(../images/red-home.png);
+    }
+
+    &--five {
+      background-image: url(../images/red-location.png);
     }
   }
 }
@@ -286,9 +312,9 @@
 
     &:hover,
     &.active {
-      color: $nav1-color-active;
-      font-weight: 600;
-      background: $nav1-bg-active;
+      color: $nav1-bg-active;
+      // font-weight: 600;
+      // background: $nav1-bg-active;
 
       @include respond(tab-port) {}
     }
@@ -327,10 +353,10 @@
   &__2-list {
     @include absolute(auto, 0, auto, 0, 9999);
     padding: 1rem 0;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 2px;
     background-color: $nav2-wrapper;
     display: none;
-    top: 6rem;
+    top: 8rem;
 
     @include respond(tab-port) {
       position: static;

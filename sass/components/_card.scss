@@ -68,12 +68,14 @@
   position: relative;
   text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
   transition: all .3s ease-in-out;
 
   @include respond(tab-port) {
     background-color: #F7F7F7;
     height: 4rem;
+    padding: 0;
   }
 
   &--no-icon {
@@ -101,6 +103,7 @@
   }
 
   &__icon {
+    flex: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,6 +113,11 @@
     border-radius: 50%;
     background-color: #F1F1F1;
     transition: all .3s ease-in-out;
+
+    @include respond(tab-port) {
+      width: 2rem;
+      height: 2rem;
+    }
 
     img {
       display: block;
@@ -386,6 +394,11 @@
     color: $color-white;
     margin-left: 1rem;
     transition: all .3s ease-in-out;
+
+    @include respond(tab-port) {
+      background-color: $color-yellow-light;
+      color: $color-primary;
+    }
   }
 
   &__roles {
@@ -900,7 +913,7 @@
 
       span {
         &::after {
-          content: "\e7ed";
+          transform: rotate(180deg);
         }
       }
     }
@@ -932,9 +945,11 @@
       width: 5rem;
 
       &::after {
-        @include iconfont;
-        content: "\e7ee";
-        font-size: 2rem;
+        display: block;
+        content: "";
+        width: 70%;
+        height: 70%;
+        background: url(../images/icon-arrow-down.png) no-repeat center center / contain;
       }
     }
   }
