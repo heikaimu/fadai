@@ -556,7 +556,6 @@ h1, h2, h3, h4 {
   position: relative;
   text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
   transition: all .3s ease-in-out;
 }
@@ -565,6 +564,7 @@ h1, h2, h3, h4 {
     background-color: #F7F7F7;
     height: 4rem;
     padding: 0;
+    justify-content: center;
   }
 }
 .inner-business-card--no-icon {

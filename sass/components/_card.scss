@@ -68,7 +68,6 @@
   position: relative;
   text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
   transition: all .3s ease-in-out;
 
@@ -76,6 +75,7 @@
     background-color: #F7F7F7;
     height: 4rem;
     padding: 0;
+    justify-content: center;
   }
 
   &--no-icon {
